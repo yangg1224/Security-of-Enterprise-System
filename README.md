@@ -1,1 +1,5 @@
-# Security-of-Enterprise-System
+# starter_folder
+
+This repo....
+
+It is organised as follows...
