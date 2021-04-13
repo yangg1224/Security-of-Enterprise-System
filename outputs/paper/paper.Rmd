@@ -1,13 +1,17 @@
 ---
-title: "TBD"
-subtitle: "TBD"
-author: "TBD"
-thanks: "Code and data are available at: LINK."
+title: "Are iPhone users more secure when using mobile enterprise systems?"
+subtitle: "The difference of the perceived security of Enterprise Systems between IOS and Android users"
+author: "Yang Wu"
+header-includes:
+ - \usepackage{float}
+ - \floatplacement{figure}{H}
+ - \floatplacement{table}{H}
+thanks: "Code and data are available at: https://github.com/yangg1224/Security-of-Enterprise-System.git."
 date: "`r format(Sys.time(), '%d %B %Y')`"
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "Organizations are adopting mobile technologies for various business applications including Enterprise system (ES) to increase the flexibility and to gain sustainable competitive advantage. At the same time, end-users are exposed to security issues when using mobile technologies. Users’ usage habits and users’ attitudes towards those potential security issues would have a significant impact to the perceived security of ES. Here comes the question: will iPhone users have higher perceived security than Android users? Through the propensity score matching and regression model, we have the answer. "
 output:
   bookdown::pdf_document2:
-toc: FALSE
+toc: TRUE
 bibliography: references.bib
 ---
 
@@ -19,64 +23,35 @@ library(palmerpenguins)
 ```
 
 # Introduction
+Mobile Enterprise System (ES) has more unique advantages than traditional enterprise systems. With a mobile enterprise platform, the entire company can be moved to the internet. Therefore, users who have permission can remotely access the enterprise database with any device equipped with a browser. Easy and convenient accessibility of data from mobile devices anywhere and anytime has made a significant change in people’s working style [@al2011preliminary]. People are no longer confined to working in the office, and any place can be their workstation. Besides, increasing business applications take advantage of mobile devices features such as a touchscreen, camera, video, voice, and other advanced functions to maximize the productivity. [@rodrigues2021mediation].
 
+These advantages have created a vulnerability. The primary design purpose for the mobile device is its portability, not its security, which gives mobile enterprise systems weaker defense capabilities (He, 2013). There are many challenges and issues stemming from a lack of users’ awareness and negative attitudes. It is increasingly hard for an enterprise to maintain resource safety since the interaction between the user and device boost sharply. The features of these interactions are often unplanned and lack of supervision, which makes the leakages of the enterprise information possible[@matkerimov2020ways].
 
+The dependent variable in my project is the perceived security of mobile ES. Many researchers have widely discussed the definition of mobile ERP system security. Although their understanding of the ERP security is strongly based on their speciﬁc domains, some aspects of the understanding of mobile ERP security are shared. [@siponen2007review] define security as the protection of resources to attain the objectives of integrity, availability, and conﬁdentiality. With regards to “integrity”, the authors suggest the metadata cannot be modified without authorization, while “availability” means that authorized person can access information anytime and anywhere. Finally, “confidentiality” refers to certain actions being implemented to prevent information leakage.
+
+As we all know, compared with Android devices, iPhone has relatively closed platform, which gives it higher security performance. But users’ usage habits also have a huge impact towards the perceived security. For example, if users tend to use public Wi-Fi at coffee shop, the perceived security of ES would be lower. Because the system has more risk of information leakage. (whether they update operating system; how they deal with pop up security warning ...) All those uncertainties raise my interest to figure it out.  
+
+The purpose of this project is to examine whether iPhone users (IOS) are securer than Android users when using mobile ES. The intervention is using iPhone as mobile device. The questionnaire survey is the chosen method for collecting data from mobile ES users, which has been done last year.  **propensity score matching** will be used to avoid selection bias and evaluate the effect of the treatment by comparing the treaded and non-treated group. It allows me to easily consider many independent variables at once, and it can be constructed using logistic regression. Multiple regression will also be used to examine the impact of users’ attitudes towards perceived ES security. The research finding will help the security providers of ES to know the determinants of perceived security in the users’ perspectives and to take measures to improve the determinants.
+
+The remainder of the paper is constructed as follows. Section 2 describes the dataset, data collection, and exploratory data analysis on feature visualization. Section 3 outlines the data analysis models, which is designed to discover relationships between features and the target variable. Section 4 summarizes the model results according to evaluation criteria. Finally, Section 5 discusses the research findings and provides directions for future research.
+
+This paper uses R statistical programming language [@citeR]. In particular, we use packages `tidyverse` [@tidyverse],  `here` [@citehere], `ggpubr` [@citeggpubr] to manipulate data and packages, `kableExtra` [@citekableExtra] to generate tables, and `ggplot2` [@citeggplot], `ggthemes` [@citeggthemes] to adjust diagrams themes. 
 
 
 # Data
-
-Our data is of penguins (Figure \@ref(fig:bills)).
-
-```{r bills, fig.cap="Bills of penguins", echo = FALSE}
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = FALSE) +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
-
-Talk more about it.
-
-Also bills and their average (Figure \@ref(fig:billssssss)). (Notice how you can change the height and width so they don't take the whole page?)
-
-```{r billssssss, fig.cap="More bills of penguins", echo = FALSE, fig.width=8, fig.height=4}
-
-# This needs to be about the random data tha tI sasmpled?
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = FALSE) +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
-
-Talk way more about it. 
-
-
+## Data collection 
 
 # Model
-
-\begin{equation}
-Pr(\theta | y) = \frac{Pr(y | \theta) Pr(\theta)}{Pr(y)}  (\#eq:bayes)
-\end{equation}
-
-Equation \@ref(eq:bayes) seems useful, eh?
-
-Here's a dumb example of how to use some references: In paper we run our analysis in `R` [@citeR]. We also use the `tidyverse` which was written by @thereferencecanbewhatever If we were interested in baseball data then @citeLahman could be useful. 
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
-
+## T-test
+## correlation model
+## propensity score matching
+## regression model 
 
 # Results
 
 # Discussion
 
 ## First discussion point
-
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
 
 ## Second discussion point
 
