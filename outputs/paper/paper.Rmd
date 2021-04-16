@@ -50,31 +50,58 @@ This paper uses R statistical programming language [@citeR]. In particular, we u
 
 To accomplish the research objectives, the author did a literature review on perceived security of mobile Enterprise System (ES). Based on the current research findings, the author concludes that there are five main categories of security issues when using mobile ES, which are mobile device issues, wireless network issues, cloud computing issues, application-level issues, and data access level issues. Different mobile phone users would have different attitudes and usage habits towards those five areas security issues, which greatly affect the perceived security of the ES. In order to test how different those impact on the iPhone and Android users, the author plan to divide people into two groups. The intervention of this research is using iPhone as mobile device. The treated group will be people who use iPhone (IOS) to operate the ES, and people in the control group will be those who use Android (Huawei, Samsung, Mi, and so on).
 
-## Data collection 
+## Data collection
 
 An online questionnaire survey is the chosen method for collecting data from Mobile ES users. Compared with other methods, the major advantages of the online questionnaire are saving time, money, and manpower. Considering this research need to do a large quantity of data collection, the questionnaire is the only suitable method. The author conducted the online questionnaire survey one year ago under the guidance of the research method class. 
 
 
 Through the agency of Chinese online questionnaire platform ‘Wenjuan Xing’ and the researcher’s personal relationship with certain companies, the author sends out around 800 online questionnaires randomly and 240 personal administered questionnaires. The personally administered survey is useful to increase the response rate and to enhance the data quality. The email reminders were sent for every ten days to encourage the potential participants to fill in their responses. 
 
+## Questionnaire design and sample
 
-The respondents were asked to do a demographics survey which includes age, gender, occupation, years of experience, name of the ES systems used, functions or modules of Mobile ES, Brand of the mobile devices used to access the ES, and ownership of the device. The questionnaire also has items for measuring users’ attitudes and usage habits on various security issues and perceived security of ES mobility. The data was collected by using an interval scale (0-strongly disagree to 10-strongly agree). The collected data was used for calculating the measures of central tendency (e.g. arithmetic mean), validating the hypotheses by using correlation, propensity score matching, multiple regression and other statistical analysis. 
+The respondents were asked to do a demographics survey which includes age, gender, occupation, years of experience, name of the ES systems used, functions or modules of Mobile ES, Brand of the mobile devices used to access the ES, and ownership of the device. The questionnaire also has items for measuring users’ attitudes and usage habits on various security issues and perceived security of ES mobility. The data features part will describe more about it.  The data was collected by using an interval scale (0-strongly disagree to 10-strongly agree). The collected data was used for calculating the measures of central tendency (e.g. arithmetic mean), validating the hypotheses by using correlation, propensity score matching, multiple regression and other statistical analysis. 
 
 
 By the end of the survey period, data had been collected from 344 participants. As a result, the overall response rate is 33%. Among 344 responses, 13 responses were rejected on account of too much missing data. Therefore, 331 useable online questionnaire data were obtained and used for data analysis. 
 
+The screen shots of the questionnaire will be attached in the Appendix 1. 
 
 
+## Dataset features
 
+### Demographics features
+Overall, the dataset has 331 observations and contains 50 features. The first nine features describes users' demographic information. 
 
+* `Work_experience` : measures how long does the user work in the current company 
+* `Gender` : describes the user's gender 
+* `Age` : describes the user's age
+* `Education_level` : describes user's educational level (High school, college, undergrad, postgrade) 
+* `Functions_used` : asks users which functionalities they use everyday
+* `Usage_frequency` : describes the frequency of the usage of mobile ES
+* `ES_Name` : describes the name of ES
+* `Mobile_device` : asks for user's mobile phone brand 
+* `Device_ownership` : clarify if the mobile phone is owned by company or owned by the user 
 
+### perceived ES security features [reference!!!]
+
+The perceived ES security is this paper's dependent variable. According to Levent et al. (2005), enterprise security plan serves as an essential role to coordinate information security policies and applicable security technologies, making them align with the business rules and the developing information models and technical architectures. Consoli (2012) combined acknowledged definitions of context and security, and concluded the security context should point to five goals:Integrity to ensure that data is in the original format and not modified; Confidentiality to ensure that only authorized people have access to resources; Authentication for allowing the access to the resources; Availability to maintain the proper functioning of the information system; Non-repudiation to ensure that a transaction cannot be denied.
+
+According to the definition above, the dataset has five features to measure the perceived ES security. Starting from here, the questionnaire is designed using interval scale (0-strongly disagree to 10-strongly agree). The user is asked to give a number between 0 and 10, which represent for their attitudes towards the given situation. 
+
+* `system_integrity` : I believe the data/ information in the mobile enterprise systems cannot be modified by unauthorized users 
+* `system_availability` : I believe the data/ information in the mobile enterprise systems is available only to authorized users when required 
+* `system_confidentiality` : I believe that the mobile enterprise systems are secured as the system detects and prevents the improper disclosure/ leakage of information
+* `system_accountability` : I believe that the mobile enterprise systems are secured as the system accounts the data changes
+* `system_nonrepudiation` : I believe that the mobile enterprise system is secured as the system does not deny any transaction that was carried out
+* `PSave` : (Dependent variable) used in the model. It takes a mean of the previous five features and presents for the user's perceived ES security. 
 
 # Model
 
 ```{r ,echo=FALSE}
 ####read the clean data 
-library(here) # locate the file path
-clean_data<- read.csv(here::here("inputs/DATA/clean_data.csv"))
+
+
+
 ```
 
 ## Difference in means: outcome variable
