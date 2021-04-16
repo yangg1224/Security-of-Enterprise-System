@@ -71,15 +71,22 @@ By the end of the survey period, data had been collected from 344 participants. 
 
 # Model
 
-```{r echo=FALSE}
+```{r ,echo=FALSE}
 ####read the clean data 
 library(here) # locate the file path
 clean_data<- read.csv(here::here("inputs/DATA/clean_data.csv"))
 ```
 
+## Difference in means: outcome variable
+
 ## T-test
+We can carry out t-tests to evaluate whether these means are statistically distinguishable:
+
+
 ## correlation model
+
 ## propensity score matching
+
 ## regression model 
 
 # Results
