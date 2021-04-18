@@ -168,6 +168,7 @@ clean_data<- read.csv(here::here("inputs/DATA/processed_dataset.csv"))
 
 
 ### Treat distribution 
+From Figure \@ref(fig:treat) , we can clearly see that the iPhone user takes the lead and follows by HuaWei phone’s user. One reason why iPhone is so popular is that The iPhone ensures all apps and functions are performing the way Apple intended them to perform, which allows for a very simple user experience. As we know, iPhone devices use IOS operation system, while other type of devices are mostly using Android operation system. So the the author category all the users into two groups, one is using IOS and the other one is using Android. The second graph shows a balanced state between all the respondents. 
 
 ```{r treat, fig.cap = "device used by the respondents",echo=FALSE, warning= FALSE,fig.width=10, fig.height=6}
 
@@ -181,18 +182,15 @@ device_map <-
   labs(title = "Device used by the respondents",x="", y="Count") +
   theme_minimal()
 
-
 EDA$treat<-sapply(EDA$treat, as.character)
-  
-
 
 # Create treat map data.
 #table(EDA$treat)
 data <- data.frame(
-  category=c("treat(IOS)", "control(Andriod)"),
+  category=c("treat(IOS)", "control(Android)"),
   count=c(163, 168)
 )
- 
+
 # Compute percentages
 data$fraction <- data$count / sum(data$count)
 
@@ -219,8 +217,6 @@ treat_map<-
   theme_void() +
   theme(legend.position = "none")
 
-
-
 # combine two diagram in one graph
 ggarrange(
   device_map, treat_map,
@@ -233,8 +229,10 @@ ggarrange(
 
 
 ### Demographics of user's work experience
+Figure \@ref(fig:workexperience) demonstrates questionnaire respondents' work experience between treat group and control group. The red histogram represents people who use Android and the yellow histogram stands for iPhone users group. Working experience is an important element which might affect users' usage habits. The more professional they are, the more knowledge and experience they would have. Overall, we can see a relatively balanced match between iPhone and Android users. Most participants are holding three to five years working experience. It is interesting to find participants who has less than one year working experience like to use iPhone, while those with more than six year experience prefer to use Android. In terms of consistency, every iPhone works the same, while every Android works differently. Maybe more professional people would like to customize their phone and have more power to control their device. 
 
-```{r education, fig.cap = "Educational level by PID",echo=FALSE, warning=FALSE,fig.width=10, fig.height=4}
+
+```{r workexperience, fig.cap = "Demographics of user's work experience",echo=FALSE, warning=FALSE,fig.width=10, fig.height=4}
 edu <- 
   EDA%>%
   ggplot(aes(x = Work_experience,fill=treat, )) +
@@ -244,13 +242,15 @@ edu <-
 edu
 ```
 
-### education level between treat and control group
+### Education level between treat and control group
 
-```{r sexism, fig.cap = "sexism by education level",echo=FALSE, fig.width=7, fig.height=5}
+Figure \@ref(fig:education) uses the jitter plot to visualize the distribution of education level by intervention groups. As we can see from the chart, people’s educational level is approximately at undergraduate and college. The iPhone user group is slightly more than Android user group in Master degree. But in general, there is not too much difference in terms of two group's educational level. 
+
+```{r education, fig.cap = "Education level between treat and control group",echo=FALSE, fig.width=6, fig.height=3}
 
 s1<-
   ggplot(EDA, aes(x = treat, y= Education_level,color=treat)) +
-  geom_point(position = "jitter", alpha = 1/5)+
+  geom_point(position = "jitter", alpha = 4/5)+
   labs(title="Education level between treat and control group", x="Intervention", y="Education level")+
   theme_light() + 
   scale_color_manual(name = "Treat group", values = c("#DB7558", "#FFCF57")) 
@@ -260,7 +260,9 @@ s1
 
 ### Device ownership 
 
-```{r internet, fig.cap = "internet usages",echo=FALSE, fig.width=15, fig.height=6}
+Device ownership also plays an important role in security context.  Many employees bring their own device to the company for work and personal usage (bring your own device, BYOD), which is not trustworthy for enterprise system security [@souppaya2013guidelines]. As company has less control over employees’ device, they have rights to download any software or choose the security level of their mobile devices. Figure \@ref(fig:own) shows who own the device among 331 observations. We can find almost 95% devices are owned by the participants themselves. 
+
+```{r own, fig.cap = "internet usages",echo=FALSE, fig.width=6.5, fig.height=4}
 G1<-ggplot(EDA, aes(x=Device_ownership, fill=Device_ownership))+ 
     geom_bar(alpha=0.8 , size=0.2, colour="black", stat = "count")+
     labs(title = "User's Device ownership ",y="Counts",x="")
@@ -273,6 +275,7 @@ G1
 
 # Model
 
+## popensity score matching
 
 
 ## Difference in means: outcome variable
