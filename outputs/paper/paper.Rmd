@@ -19,8 +19,18 @@ bibliography: references.bib
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+library(tinytex)
 library(tidyverse)
 library(palmerpenguins)
+library(ggplot2)
+library(ggthemes)
+library(ggpubr)
+library(hrbrthemes)
+library(kableExtra)
+library(broom)
+library(randomForest)
+library(plyr)
+library(qqplotr)
 ```
 
 # Introduction
@@ -88,21 +98,182 @@ The perceived ES security is this paper's dependent variable. According to Leven
 
 According to the definition above, the dataset has five features to measure the perceived ES security. Starting from here, the questionnaire is designed using interval scale (0-strongly disagree to 10-strongly agree). The user is asked to give a number between 0 and 10, which represent for their attitudes towards the given situation. 
 
-* `system_integrity` : I believe the data/ information in the mobile enterprise systems cannot be modified by unauthorized users 
-* `system_availability` : I believe the data/ information in the mobile enterprise systems is available only to authorized users when required 
-* `system_confidentiality` : I believe that the mobile enterprise systems are secured as the system detects and prevents the improper disclosure/ leakage of information
-* `system_accountability` : I believe that the mobile enterprise systems are secured as the system accounts the data changes
-* `system_nonrepudiation` : I believe that the mobile enterprise system is secured as the system does not deny any transaction that was carried out
+* `system_integrity` : measures user's attitude towards "I believe the data/ information in the mobile enterprise systems cannot be modified by unauthorized users"
+* `system_availability` : measures user's attitude towards "I believe the data/ information in the mobile enterprise systems is available only to authorized users when required "
+* `system_confidentiality` : measures user's attitude towards "I believe that the mobile enterprise systems are secured as the system detects and prevents the improper disclosure/ leakage of information"
+* `system_accountability` : measures user's attitude towards "I believe that the mobile enterprise systems are secured as the system accounts the data changes"
+* `system_nonrepudiation` : measures user's attitude towards "I believe that the mobile enterprise system is secured as the system does not deny any transaction that was carried out"
 * `PSave` : (Dependent variable) used in the model. It takes a mean of the previous five features and presents for the user's perceived ES security. 
+
+### Molibe device security issue features [references!!!]
+
+A mobile device refers to any portable device which has computing and storage capabilities(Singh & Ranjan, 2016). The range of devices from smartphones, iPads, and tablets is quite popular among clients and IT professionals. Mobile users can work everywhere without being constrained by any networking system. These mobility and roaming features extend the network boundary beyond a single fixed point but make security management a much harder issue, because users cannot be tracked down into a fixed location anymore (Al Ladan, 2016). Moreover, mobile devices’ operational systems are highly vulnerable, which results in threats having a variety of ways to spread. There is no device whose platform is completely closed, which has weakened the security performance of the original application and creates more risks for information sharing (Hermann & Fabian, 2014).  There are six independent variables which might affect the perceived ES security:
+
+* `Install_firewall` : measures user's attitude towards " I feel painful to install or update the security software such as antivirus and firewall software on my device."
+* `BYOD` : measures user's attitude towards " I like the idea of using my own device for personal and corporate business."
+* `Ignore_warnning` : measures user's attitude towards " I like to install applications in my mobile device without paying attention to permission warnings (or terms and conditions of usage)."
+* `Strong_pin` : measures user's attitude towards " I feel painful to use a password or a pin code to lock my mobile device."
+* `Store_passwords` : measures user's attitude towards " I feel it is simple and easy to store usernames and passwords on the device."
+* `update_OS` :measures user's attitude towards " I feel painful to update the operating systems (e.g. iOS, Android) in my mobile device. "
+
+### Wireless network security issue features [reference!!!]
+
+Mobile communication is generated mainly through radio signals rather than wires, so mobile ES has particular challenges compared with traditional computer-based ES. First of all, reliable Internet availability is a pre-requirement for the secure wireless network. According to Hermann and Fabian (2014), “the wireless network is more accessible to intercept and attack, so traditional security technologies such as firewalls, authentication servers, biometrics, cryptography, intrusion detection, and VPNs are not enough to address security issues in the wireless network”(Hermann & Fabian, 2014). There are six independent variables related to the wireless network which might affect the perceived ES security:
+
+* `public_WiFi` : measures user's attitude towards "  I believe it is secured to use the wireless networks in public places such as coffee shops, airport kiosks, or other hotspots"
+* `unsecured_network` : measures user's attitude towards " I show no interest on the security threats on the wireless networks."
+* `network_control` : measures user's attitude towards " I feel nervous to know the enterprise doesn’t have much security control over the wireless networks."
+* `network_attack` : measures user's attitude towards " I feel nervous to know that the hacker needs only a mobile device and a wireless card to capture data packets and transmission of the data."
+* `encrypted_transimittion` : measures user's attitude towards " I believe the wireless network is not secured enough when the transmitted information is not encrypted."
+* `unreliable_int` :measures user's attitude towards " I believe the data security and protection may be compromised when the Internet connection is not available and reliable. "
+
+### Cloud Computing Security Issue features
+
+The appearance of cloud computing is narrowing down the gap between mobile ES and small to medium companies. Although it does cut down the set-up process time and cost and reduces the required skills in the company, some challenges and problems should still be kept in mind. Certain loopholes in its architecture have made cloud computing vulnerable to various security and privacy threats (Picek, Mijac, & Androcec, 2017).There are six independent variables related to the cloud computing which might affect the perceived ES security:
+
+* `cloud_resource` : measures user's attitude towards "I believe that the applications that use cloud resources are vulnerable to threats."
+* `cloud_compute` : measures user's attitude towards "I believe the cloud computing is vulnerable for data security since the access can be
+interrupted at multiple points in the cloud."
+* `remote_datastore` : measures user's attitude towards "Since the data is stored and processed remotely in cloud computing, I believe that the true ownership of the data becomes a security issue."
+* `Data_regulation` : measures user's attitude towards "Since the data can be located anywhere in the world with different control and privacy regulations, I believe this practice leads to security risks."
+* `multiple_login` : measures user's attitude towards " In a cloud environment, I like to logon to the same application using multiple devices simultaneously."
+* `weak_authentication` :measures user's attitude towards "In a cloud environment, I like to use simple and short passwords."
+
+### Application level security issue features
+The application-level mobile solution mainly consists of mobile operation systems and mobile applications. The application layer provides users with an interface to operate their mobile devices. The operation system act as a platform to run mobile applications. Application-level issues usually take place in a multi-tenant environment or in a virtualized world. There are six independent variables related to the application which might affect the perceived ES security:
+
+* `unknown_app` : measures user's attitude towards "I feel pleasant to download applications from unreliable web sites or from links within e-mails"
+* `update_ES` : measures user's attitude towards "I believe in installing updates for ERP systems to avoid any outdated security protections."
+* `Auto_update` : measures user's attitude towards " I like to use automatic updater which applies any software application updates whenever available."
+* `VPN` : measures user's attitude towards "I like to use VPN connections to download applications"
+* `third_party_app` : measures user's attitude towards " I believe more fake apps/ malware versions (for Android) are found on third-party
+application sites."
+* `update` :measures user's attitude towards "I like to update the device operating systems and applications when prompted."
+
+### Data Level Security Issue features
+Since there is currently no appropriate regulation around data protection, data-level security is relying heavily on trust between the business and the provider. Data location and replication is one of the biggest concerns in the data level. A replica might be located in different countries where there is no clear legislation about data security and privacy, increasing the difficulty of managing the data (Kouatli, 2014). There are six independent variables related to the data access which might affect the perceived ES security:
+
+* ` single_authenticate` : measures user's attitude towards "I like single authentication process for data access using only passwords."
+* `audit_log` : measures user's attitude towards "I dislike maintaining audit logs to track any changes in the data.."
+* `access_right` : measures user's attitude towards "I feel comfortable to give access rights to access all information to all employees"
+* `change_data` : measures user's attitude towards " I feel comfortable to give permission to change all information by all employees"
+* `malicious_attack` : measures user's attitude towards " I believe hackers can harvest user information from mobile ES and create malicious content to fraud the individual user"
+* `Data_threat` :measures user's attitude towards "I believe anytime and anywhere data access with ES mobility brings a large number of data security threats."
+
+## Descriptive Analysis 
+```{r ,echo=FALSE}
+####read the clean data 
+clean_data<- read.csv(here::here("inputs/DATA/processed_dataset.csv"))
+```
+
+
+### Treat distribution 
+
+```{r treat, fig.cap = "device used by the respondents",echo=FALSE, warning= FALSE,fig.width=10, fig.height=6}
+
+EDA<-clean_data
+
+device_map <- 
+  EDA%>%
+  ggplot(aes(x = Mobile_device, fill = Mobile_device)) +
+  geom_bar(width = 0.7,position = "dodge") + 
+  coord_polar()+
+  labs(title = "Device used by the respondents",x="", y="Count") +
+  theme_minimal()
+
+
+EDA$treat<-sapply(EDA$treat, as.character)
+  
+
+
+# Create treat map data.
+#table(EDA$treat)
+data <- data.frame(
+  category=c("treat(IOS)", "control(Andriod)"),
+  count=c(163, 168)
+)
+ 
+# Compute percentages
+data$fraction <- data$count / sum(data$count)
+
+# Compute the cumulative percentages (top of each rectangle)
+data$ymax <- cumsum(data$fraction)
+
+# Compute the bottom of each rectangle
+data$ymin <- c(0, head(data$ymax, n=-1))
+
+# Compute label position
+data$labelPosition <- (data$ymax + data$ymin) / 2
+
+# Compute a good label
+data$label <- paste0(data$category, "\n value: ", data$count)
+
+# Make the plot
+treat_map<-
+  ggplot(data, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=category)) +
+  geom_rect() +
+  geom_label( x=3.5, aes(y=labelPosition, label=label), size=6) +
+  scale_fill_brewer(palette=1) +
+  coord_polar(theta="y") +
+  xlim(c(2, 4)) +
+  theme_void() +
+  theme(legend.position = "none")
+
+
+
+# combine two diagram in one graph
+ggarrange(
+  device_map, treat_map,
+  ncol = 2, nrow = 1,
+  hjust = -0.5,
+  align = "hv"
+  )
+```
+
+
+
+### Demographics of user's work experience
+
+```{r education, fig.cap = "Educational level by PID",echo=FALSE, warning=FALSE,fig.width=10, fig.height=4}
+edu <- 
+  EDA%>%
+  ggplot(aes(x = Work_experience,fill=treat, )) +
+  geom_bar(position="dodge") +
+  labs(title = "Demographics of user's work experience between treat and control group",x= "Work experience", y="Count")+
+  scale_fill_manual(name = "Treat Group",values = c("#DB7558", "#FFCF57"))
+edu
+```
+
+### education level between treat and control group
+
+```{r sexism, fig.cap = "sexism by education level",echo=FALSE, fig.width=7, fig.height=5}
+
+s1<-
+  ggplot(EDA, aes(x = treat, y= Education_level,color=treat)) +
+  geom_point(position = "jitter", alpha = 1/5)+
+  labs(title="Education level between treat and control group", x="Intervention", y="Education level")+
+  theme_light() + 
+  scale_color_manual(name = "Treat group", values = c("#DB7558", "#FFCF57")) 
+s1
+```
+
+
+### Device ownership 
+
+```{r internet, fig.cap = "internet usages",echo=FALSE, fig.width=15, fig.height=6}
+G1<-ggplot(EDA, aes(x=Device_ownership, fill=Device_ownership))+ 
+    geom_bar(alpha=0.8 , size=0.2, colour="black", stat = "count")+
+    labs(title = "User's Device ownership ",y="Counts",x="")
+
+G1
+```
+
+
+
 
 # Model
 
-```{r ,echo=FALSE}
-####read the clean data 
 
-
-
-```
 
 ## Difference in means: outcome variable
 
