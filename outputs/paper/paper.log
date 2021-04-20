@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.14)  20 APR 2021 11:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.14)  20 APR 2021 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,39 +688,37 @@ l.502
                                                   
 l.502 
        <./paper_files/figure-latex/cs1-1.pdf>]
-<paper_files/figure-latex/balance-1.pdf, id=299, 573.14125pt x 714.67pt>
+<paper_files/figure-latex/balance-1.pdf, id=300, 573.14125pt x 714.67pt>
 File: paper_files/figure-latex/balance-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/balance-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/balance-1.pdf  used on input 
-line 543.
+line 545.
 (pdftex.def)             Requested size: 469.76022pt x 585.76056pt.
 [13pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.546 
+l.548 
       pdfTeX warning (ext4): destination with the same identifier (name{table.3
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.546 
-       <./paper_files/figure-latex/cs2-1.pdf>] [14]
-Overfull \vbox (1.06653pt too high) has occurred while \output is active []
-
-[15pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
- has been already used, duplicate ignored
+l.548 
+       <./paper_files/figure-latex/cs2-1.pdf>] [14pdfTeX warning (ext4): destin
+ation with the same identifier (name{figure.7}) has been already used, duplicat
+e ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.546 
-       <./paper_files/figure-latex/balance-1.pdf>] [16] [17] [18] [19] [20] (./
+l.554 
+       <./paper_files/figure-latex/balance-1.pdf>] [15] [16] [17] [18] [19] (./
 paper.aux)
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 265ABE72B67113E4A4ADB51A01E3389C;3898.
  ) 
 Here is how much of TeX's memory you used:
- 12110 strings out of 480970
- 175806 string characters out of 5907196
- 622842 words of memory out of 5000000
+ 12109 strings out of 480970
+ 175799 string characters out of 5907196
+ 623839 words of memory out of 5000000
  28932 multiletter control sequences out of 15000+600000
  473498 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -740,10 +738,10 @@ mr17.pfb></Users/yang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb
 brary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/yang/Library/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/yang/Library/TinyTeX/
 texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (20 pages, 972663 bytes).
+Output written on paper.pdf (19 pages, 972972 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 429 compressed objects within 5 object streams
- 128 named destinations out of 1000 (max. 500000)
+ 487 PDF objects out of 1000 (max. 8388607)
+ 427 compressed objects within 5 object streams
+ 127 named destinations out of 1000 (max. 500000)
  244 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -385,7 +385,9 @@ head(dta_m)%>%
 
 ## Examining covariate balance in the matched sample
 
-```{r balance, fig.cap = "ES user's propensity score",echo=FALSE, warning=FALSE,fig.width=8, fig.height=10}
+The author uses visualization to show whether the matching is done well. The Figure \@ref(fig:balance) plots the mean of each independent variable against the estimated propensity score, separately by treatment status. If the matching result is good, the treatment and control groups will have similar identical means of each covariate at each value of the propensity score. In general, the model has a good match. 
+
+```{r balance, fig.cap = "covariate balance check",echo=FALSE, warning=FALSE,fig.width=8, fig.height=10}
 
 fn_bal <- function(dta, variable) {
   dta$variable <- dta[, variable]
@@ -434,9 +436,7 @@ fn_bal <- function(dta, variable) {
    nrow = 6, ncol=5
 )
 
-   
-
-
+  
 ```
 
 
