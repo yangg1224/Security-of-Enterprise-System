@@ -31,6 +31,8 @@ library(broom)
 library(randomForest)
 library(plyr)
 library(qqplotr)
+library(dplyr)
+library(gridExtra)
 ```
 
 # Introduction
@@ -310,7 +312,8 @@ ms%>%
                             latex_options = "HOLD_position",
                             table.envir = "table",
                             font_size =5
-                           )
+                          )
+
 
 ```
 
@@ -327,9 +330,119 @@ m%>%
   kableExtra::kable_styling(latex_options = c("hold_position"))
 ```
 
+## Examing the Region of common support
+After estimating the propensity score, it is useful to plot histograms of the estimated propensity scores by treatment status. As shown in Figure \@ref(fig:cs1), these graphics show the overlap of the propensity scores of the two groups, suggesting they share a lot of common support on the covariates in the model.
+
+```{r cs1, fig.cap = "ES user's propensity score",echo=FALSE, warning=FALSE,fig.width=6.5, fig.height=4}
+
+
+labs <- paste("Actual phone type used:", c("IOS", "Andriod"))
+prs_df %>%
+  mutate(treat = ifelse(treat == 1, labs[1], labs[2])) %>%
+  ggplot(aes(x = pr_score)) +
+  geom_histogram(color = "white", bins=30) +
+  facet_wrap(~treat) +
+  xlab("Probability of using iPhone to operate ES") +
+  theme_bw()
+
+```
+
+Common support Figure \@ref(fig:cs2) indicates the regions of stratification share enough members of the treatment and control groups.
+
+```{r cs2, fig.cap = "ES user's propensity score",echo=FALSE, warning=FALSE,fig.width=6.5, fig.height=4}
+
+
+prs_df %>%
+  mutate(treat = ifelse(treat == 1, labs[1], labs[2])) %>%
+  ggplot()+
+  geom_histogram(aes(x=pr_score, y=..density.., fill=treat), color="white", bins=30, position="identity", alpha=.3)+
+  geom_density(aes(x=pr_score, color=treat))
+
+```
+
+## Executing matching algorithm 
+**MatchIt** package [@match] is used here to find pairs of observations that have very similar propensity scores, but that differ in their treatment status. This package estimates the propensity score in the background and then matches observations based on the "nearest" method.
+
+Note that the final dataset is smaller than the original: it contains 326 observations, meaning that 163 pairs of treated and control observations were matched. Also note that the final dataset contains a variable called distance, which is the propensity score.
+```{r  ema, fig.cap = "ES user's propensity score",echo=FALSE, warning=FALSE,fig.width=6.5, fig.height=4}
+library(MatchIt)
+mod_match <- matchit(treat~ Install_firewall+BYOD+ Ignore_warnning+Strong_pin+
+                       Store_passwords+update_OS+public_WiFi+unsecured_network+
+                       network_control+network_attack+encrypted_transimittion+unreliable_int+
+                       cloud_resource +cloud_compute+remote_datastore+Data_regulation+multiple_login+
+                       weak_authentication+unknown_app+  update_ES+ Auto_update+
+                       VPN + third_party_app+update+single_authenticate+audit_log+access_right+ change_data+ malicious_attack +Data_threats, method = "nearest", data = clean_data)
+
+## check the match
+dta_m <- match.data(mod_match)
+dim(dta_m)
+
+head(dta_m)%>%
+  kableExtra::kbl(caption = "T test: Affect level of video vs control")%>%
+  kableExtra::kable_styling(latex_options = "scale_down")%>% # use scale_down option to make the font
+  kableExtra::kable_styling(latex_options = c("hold_position"))
+```
+
+## Examining covariate balance in the matched sample
+
+```{r balance, fig.cap = "ES user's propensity score",echo=FALSE, warning=FALSE,fig.width=8, fig.height=10}
+
+fn_bal <- function(dta, variable) {
+  dta$variable <- dta[, variable]
+  dta$treat <- as.factor(dta$treat)
+  support <- c(min(dta$variable), max(dta$variable))
+  ggplot(dta, aes(x = distance, y = variable, color = treat)) +
+    geom_point(alpha = 0.2, size = 1.3) +
+    geom_smooth(method = "loess", se = F,formula = y ~ x) +
+    xlab("Propensity score") +
+    ylab(variable) +
+    theme_bw() +
+    ylim(support)
+}
+
+ grid.arrange(
+   fn_bal(dta_m, "Install_firewall")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "BYOD") + theme(legend.position = "none"),
+   fn_bal(dta_m, "Ignore_warnning")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "Strong_pin") + theme(legend.position = "none"),
+   fn_bal(dta_m, "Store_passwords")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "update_OS")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "public_WiFi") + theme(legend.position = "none"),
+   fn_bal(dta_m, "Ignore_warnning")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "unsecured_network") + theme(legend.position = "none"),
+   fn_bal(dta_m, "network_control")+ theme(legend.position = "none"),   
+   fn_bal(dta_m, "network_attack")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "encrypted_transimittion") + theme(legend.position = "none"),
+   fn_bal(dta_m, "unreliable_int")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "cloud_resource") + theme(legend.position = "none"),
+   fn_bal(dta_m, "cloud_compute")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "remote_datastore")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "Data_regulation") + theme(legend.position = "none"),
+   fn_bal(dta_m, "multiple_login")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "unknown_app") + theme(legend.position = "none"),
+   fn_bal(dta_m, "update_ES")+ theme(legend.position = "none"),   
+   fn_bal(dta_m, "Auto_update")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "VPN") + theme(legend.position = "none"),
+   fn_bal(dta_m, "third_party_app")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "single_authenticate") + theme(legend.position = "none"),
+   fn_bal(dta_m, "audit_log")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "access_right")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "change_data") + theme(legend.position = "none"),
+   fn_bal(dta_m, "malicious_attack")+ theme(legend.position = "none"),
+   fn_bal(dta_m, "Data_threats") + theme(legend.position = "none"),
+   fn_bal(dta_m, "weak_authentication")+ theme(legend.position = "none"),  
+   nrow = 6, ncol=5
+)
+
+   
+
+
+```
+
 
 
 ## T-test
+
 The t-test is used to compare the sample mean of our Treated group and Control group. The goal is to determine whether the intervention has an effective effect on the treated group. Our hypothesis is the intervention will have positive impact towards the restaurant's revenue . The t-test results is represented in the table xxx. The package **Broom** [@broom1] is used to clean the t test results and convert it into the dataframe. The p value we get is < 2.2e-16, as the p value would indicate a significant result, meaning that the actual p value is even smaller than 2.2e-16 (a typical threshold is 0.05, anything smaller counts as statistically significant). So we can 
 interpret hypothesis not rejected which means that the re-opening of restaurants has a significant effect on treated group in terms of revenue increase.
 
