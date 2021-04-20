@@ -383,7 +383,7 @@ head(dta_m)%>%
   kableExtra::kable_styling(latex_options = c("hold_position"))
 ```
 
-## Examining covariate balance in the matched sample
+## Model check---Examining covariate balance in the matched sample
 
 The author uses visualization to show whether the matching is done well. The Figure \@ref(fig:balance) plots the mean of each independent variable against the estimated propensity score, separately by treatment status. If the matching result is good, the treatment and control groups will have similar identical means of each covariate at each value of the propensity score. In general, the model has a good match. 
 
@@ -440,19 +440,23 @@ fn_bal <- function(dta, variable) {
 ```
 
 
+## Estimating treatment effects---T-test
 
-## T-test
+The t-test is used to compare the sample mean of our Treated group(IOS) and Control group(Android). The goal is to determine whether the intervention has an effective effect on the treated group. Our hypothesis is that the intervention will increase the perceived ES security. The t-test results will be presented in the next section. The package **Broom** [@broom1] is used to clean the t test results and convert it into the dataframe. 
 
-The t-test is used to compare the sample mean of our Treated group and Control group. The goal is to determine whether the intervention has an effective effect on the treated group. Our hypothesis is the intervention will have positive impact towards the restaurant's revenue . The t-test results is represented in the table xxx. The package **Broom** [@broom1] is used to clean the t test results and convert it into the dataframe. The p value we get is < 2.2e-16, as the p value would indicate a significant result, meaning that the actual p value is even smaller than 2.2e-16 (a typical threshold is 0.05, anything smaller counts as statistically significant). So we can 
-interpret hypothesis not rejected which means that the re-opening of restaurants has a significant effect on treated group in terms of revenue increase.
+```{r ttest, fig.cap = "T-test",echo=FALSE, warning=FALSE,fig.width=8, fig.height=4}
+## T test
+ttest_after<-with(dta_m, t.test(PSave ~ treat))
+ttest_after
+tidy(ttest_after)%>%
+  select(-c(estimate,statistic,parameter))%>%
 
+  kableExtra::kbl(caption = "T-test on dependent variable") %>%  
+  kableExtra::kable_styling(latex_options = "scale_down")%>% # use scale_down option to make the font
+  kableExtra::kable_styling(latex_options = c("hold_position"))
+```
 
-
-
-## correlation model
-
-
-## regression model 
+## Estimating treatment effects---regression model 
 We are using RStudio to run the multiple linear regression model. The following reasons explain why we decide to choose multiple linear regression [@WinNT]:
 
 * It account for all of the potentially important factors in one model
@@ -478,6 +482,9 @@ The sign of the regression coefficient describes whether there is a positive or 
 
 
 # Results
+
+
+The p value we get is < 2.2e-16, as the p value would indicate a significant result, meaning that the actual p value is even smaller than 2.2e-16 (a typical threshold is 0.05, anything smaller counts as statistically significant). So we can interpret hypothesis not rejected which means that the re-opening of restaurants has a significant effect on treated group in terms of revenue increase.
 
 # Discussion
 

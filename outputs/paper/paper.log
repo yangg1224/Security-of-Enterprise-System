@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.14)  20 APR 2021 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.14)  20 APR 2021 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -607,13 +607,13 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3] [4] [5] [6]
-<paper_files/figure-latex/treat-1.pdf, id=195, 691.58376pt x 290.08376pt>
+<paper_files/figure-latex/treat-1.pdf, id=190, 691.58376pt x 290.08376pt>
 File: paper_files/figure-latex/treat-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/treat-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/treat-1.pdf  used on input li
 ne 325.
 (pdftex.def)             Requested size: 469.7642pt x 197.04187pt.
-<paper_files/figure-latex/workexperience-1.pdf, id=197, 706.64pt x 280.04625pt>
+<paper_files/figure-latex/workexperience-1.pdf, id=192, 706.64pt x 280.04625pt>
 
 File: paper_files/figure-latex/workexperience-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/workexperience-1.pdf>
@@ -626,7 +626,7 @@ has been already used, duplicate ignored
                                                   
 l.338 \end{figure}
                    <./paper_files/figure-latex/treat-1.pdf>]
-<paper_files/figure-latex/education-1.pdf, id=218, 421.575pt x 204.765pt>
+<paper_files/figure-latex/education-1.pdf, id=213, 421.575pt x 204.765pt>
 File: paper_files/figure-latex/education-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/education-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/education-1.pdf  used on inpu
@@ -644,7 +644,7 @@ l.355
 l.355 
        <./paper_files/figure-latex/workexperience-1.pdf> <./paper_files/figure-
 latex/education-1.pdf>]
-<paper_files/figure-latex/own-1.pdf, id=246, 453.695pt x 266.9975pt>
+<paper_files/figure-latex/own-1.pdf, id=241, 453.695pt x 266.9975pt>
 File: paper_files/figure-latex/own-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/own-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/own-1.pdf  used on input line
@@ -665,13 +665,13 @@ has been already used, duplicate ignored
                                                   
 l.488 
       ]
-<paper_files/figure-latex/cs1-1.pdf, id=282, 464.73625pt x 280.04625pt>
+<paper_files/figure-latex/cs1-1.pdf, id=277, 464.73625pt x 280.04625pt>
 File: paper_files/figure-latex/cs1-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/cs1-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/cs1-1.pdf  used on input line
  491.
 (pdftex.def)             Requested size: 464.74928pt x 280.0541pt.
-<paper_files/figure-latex/cs2-1.pdf, id=284, 453.695pt x 279.0425pt>
+<paper_files/figure-latex/cs2-1.pdf, id=279, 453.695pt x 279.0425pt>
 File: paper_files/figure-latex/cs2-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/cs2-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/cs2-1.pdf  used on input line
@@ -688,7 +688,7 @@ l.502
                                                   
 l.502 
        <./paper_files/figure-latex/cs1-1.pdf>]
-<paper_files/figure-latex/balance-1.pdf, id=300, 573.14125pt x 714.67pt>
+<paper_files/figure-latex/balance-1.pdf, id=295, 573.14125pt x 714.67pt>
 File: paper_files/figure-latex/balance-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/balance-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/balance-1.pdf  used on input 
@@ -709,17 +709,22 @@ ation with the same identifier (name{figure.7}) has been already used, duplicat
 e ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.554 
-       <./paper_files/figure-latex/balance-1.pdf>] [15] [16] [17] [18] [19] (./
-paper.aux)
+l.553 
+       <./paper_files/figure-latex/balance-1.pdf>] [15pdfTeX warning (ext4): de
+stination with the same identifier (name{table.4}) has been already used, dupli
+cate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.610 \section{Results}\label{results}}
+                                       ] [16] [17] [18] [19] (./paper.aux)
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 265ABE72B67113E4A4ADB51A01E3389C;3898.
+(rerunfilecheck)             Checksum: F94D58C2FCE1CFD09559BA0A3F6A2B9C;4126.
  ) 
 Here is how much of TeX's memory you used:
- 12109 strings out of 480970
- 175799 string characters out of 5907196
- 623839 words of memory out of 5000000
- 28932 multiletter control sequences out of 15000+600000
+ 12107 strings out of 480970
+ 175885 string characters out of 5907196
+ 623917 words of memory out of 5000000
+ 28931 multiletter control sequences out of 15000+600000
  473498 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,13n,74p,1027b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -738,10 +743,10 @@ mr17.pfb></Users/yang/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb
 brary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/yang/Library/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/yang/Library/TinyTeX/
 texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (19 pages, 972972 bytes).
+Output written on paper.pdf (19 pages, 975233 bytes).
 PDF statistics:
- 487 PDF objects out of 1000 (max. 8388607)
- 427 compressed objects within 5 object streams
- 127 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 481 PDF objects out of 1000 (max. 8388607)
+ 421 compressed objects within 5 object streams
+ 126 named destinations out of 1000 (max. 500000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 
