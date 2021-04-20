@@ -25,7 +25,10 @@ m_ps<-glm(treat~ Install_firewall+BYOD+ Ignore_warnning+Strong_pin+
           weak_authentication+unknown_app+  update_ES+ Auto_update+
           VPN + third_party_app+update+single_authenticate+audit_log+access_right+ change_data+ malicious_attack+Data_threat, 
           family = binomial(), data = clean_data)
-summary(m_ps)
+
+summary<-summary(m_ps)
+
+class(summary)
 
 ##propensity score 
 prs_df <- data.frame(pr_score = predict(m_ps, type = "response"),

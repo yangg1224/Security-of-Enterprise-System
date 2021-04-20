@@ -275,24 +275,100 @@ G1
 
 # Model
 
-## popensity score matching
+The author made a choice between difference in difference method and propensity score matching method. Both methods are good for analyze observation data. The difference-in-difference method captures the significant differences in outcomes across the treatment and control groups, which occur between pre-treatment and post-treatment periods[@lechner2011estimation]. Difference in differences is a useful analysis framework to compare the changes in dependent variables, but in this project, it is hard to identify a certain time period. Because we cannot force our survey participants to use certain mobile devices in this period. Besides that, there might be a huge selection bias if we use DD method. Between iPhone and Android users, there would have lots of difference like their education level, age, gender, work experience and so on. It is really hard to match the people in the treat and control groups as closely as possible. Therefore, the author choose to use propensity score matching in this project.
+
+## propensity score matching method
+
+Propensity score matching estimators are widely used in evaluation research to estimate average treatment effects[@abadie2016matching]. Propensity score matching creates a group of participants for the treatment and control groups. The matching group consists of at least one participant in the treatment group with similar propensity scores and at least one participant in the control group. The goal is to approximate a random experiment and eliminate many problems caused by observational data analysis like selections bias.
+
+## propensity score estimation 
+
+Basically, the propensity score matching method would assign some probability to each observation. In this project, based on the independent variables (users’ attitudes towards different kind of security issues), the author constructs the propensity score estimation. We estimate the propensity score by running a logit model where the dependent variable (perceived ES security) is a binary variable indicating treatment status. **glm()** is used to fit generalized linear models, specified by giving a symbolic description of the linear predictor and a description of the error distribution[@glm]. Table \@ref(tab:pse) shows the results. We can then compare the outcomes of observations with similar propensity scores. 
 
 
-## Difference in means: outcome variable
+```{r pse, fig.cap = "propensity score estimation table",echo=FALSE}
+
+m_ps<-glm(treat~ Install_firewall+BYOD+ Ignore_warnning+Strong_pin+ Store_passwords+update_OS+public_WiFi+unsecured_network+ network_control+network_attack+encrypted_transimittion+unreliable_int+cloud_resource +cloud_compute+remote_datastore+Data_regulation+multiple_login+weak_authentication+unknown_app+ update_ES+ Auto_update+VPN + third_party_app+update+single_authenticate+audit_log+access_right+ change_data+ malicious_attack+Data_threats, 
+family = binomial(), data = clean_data)
+
+library(modelsummary)
+ms<-
+modelsummary(
+m_ps,
+output = "default",
+fmt = 3,
+estimate = "estimate",
+statistic = "std.error",
+vcov = NULL,
+conf_level = 0.95, #confidence level to use for confidence intervals
+stars = TRUE,
+align = NULL,
+notes = NULL,
+title = "propensity score estimation table")
+ms%>%
+  kableExtra::kable_styling(bootstrap_options = "basic",
+                            latex_options = "HOLD_position",
+                            table.envir = "table",
+                            font_size =5
+                           )
+
+```
+
+
+Using this model, we can now calculate the propensity score for each ES user. It is simply the user’s predicted probability of being Treated, given the estimates from the logit model. Below, the author calculates this propensity score using **predict()** and create a dataframe that has the propensity score as well as the user’s actual treatment status. Table \@ref(tab:ps)  shows the first 6 rows of result. 
+```{r ps, fig.cap = "ES user's propensity score",echo=FALSE }
+##propensity score 
+prs_df <- data.frame(pr_score = predict(m_ps, type = "response"),
+                     treat = m_ps$model$treat)
+m<-head(prs_df)
+
+m%>%
+  kableExtra::kbl(caption="ES user's propensity score and actual treatment status")%>%
+  kableExtra::kable_styling(latex_options = c("hold_position"))
+```
+
+
 
 ## T-test
-We can carry out t-tests to evaluate whether these means are statistically distinguishable:
+The t-test is used to compare the sample mean of our Treated group and Control group. The goal is to determine whether the intervention has an effective effect on the treated group. Our hypothesis is the intervention will have positive impact towards the restaurant's revenue . The t-test results is represented in the table xxx. The package **Broom** [@broom1] is used to clean the t test results and convert it into the dataframe. The p value we get is < 2.2e-16, as the p value would indicate a significant result, meaning that the actual p value is even smaller than 2.2e-16 (a typical threshold is 0.05, anything smaller counts as statistically significant). So we can 
+interpret hypothesis not rejected which means that the re-opening of restaurants has a significant effect on treated group in terms of revenue increase.
+
+
 
 
 ## correlation model
 
-## propensity score matching
 
 ## regression model 
+We are using RStudio to run the multiple linear regression model. The following reasons explain why we decide to choose multiple linear regression [@WinNT]:
+
+* It account for all of the potentially important factors in one model
+* It leads to a more precise understanding of the relationship between dependent variables and independent variables
+* It is able to identify outliers or anomalies in the dataset. 
+
+
+
+**R squared** : 
+
+R-squared  is a measure of the goodness of fit of the model. A larger R-squared  indicates a closer fit of the model to the data. It is used as an optimality criterion in parameter selection and model selection [@johansen1980welch].
+
+**P-value**:
+
+P-value is used to describe the occurrence possibility of the extreme outcome when the null hypothesis is true [@ioannidis2018proposal]. If the p-value is small, it means that the probability of occurrence of the null hypothesis to be true is very small. And if it does occur, we have a reason to reject the null hypothesis. In short, the smaller the p-value, the more significant the result. Usually the threshold for significant p value is set to 0.05.
+
+**Regression coefficient**:
+
+The sign of the regression coefficient describes whether there is a positive or negative correlation between each feature variable and the dependent variable (Warren affective score). A positive coefficient means that as the value of the independent variable increases, the average value of the affective score also tends to increase. A negative coefficient indicates that as the independent variable increases, the affective score tends to decrease [@uyanik2013study].
+
+
+
+
 
 # Results
 
 # Discussion
+
+## Causality 
 
 ## First discussion point
 
@@ -302,7 +378,7 @@ We can carry out t-tests to evaluate whether these means are statistically disti
 
 ## Weaknesses and next steps
 
-Weaknesses and next steps should also be included.
+The true propensity score is never known in observational studies, so you can never be certain that the propensity score estimates are accurate. Some authors urge caution in knowing the limitations of what really amounts to an estimation tool — and trying to approximate a random experiment from observational data can be fraught with pitfalls. Others, (e.g. King,2016) think that these scores shouldn’t be used for matching at all.
 
 \newpage
 
