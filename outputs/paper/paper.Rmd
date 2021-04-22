@@ -33,6 +33,8 @@ library(plyr)
 library(qqplotr)
 library(dplyr)
 library(gridExtra)
+library(huxtable)
+
 ```
 
 # Introduction
@@ -184,7 +186,7 @@ device_map <-
   labs(title = "Device used by the respondents",x="", y="Count") +
   theme_minimal()
 
-EDA$treat<-sapply(EDA$treat, as.character)
+EDA$treat<-sapply(EDA$treat, as.factor)
 
 # Create treat map data.
 #table(EDA$treat)
@@ -366,6 +368,10 @@ prs_df %>%
 Note that the final dataset is smaller than the original: it contains 326 observations, meaning that 163 pairs of treated and control observations were matched. Also note that the final dataset contains a variable called distance, which is the propensity score.
 ```{r  ema, fig.cap = "ES user's propensity score",echo=FALSE, warning=FALSE,fig.width=6.5, fig.height=4}
 library(MatchIt)
+
+clean_data$treat<-sapply(clean_data$treat, as.factor)
+
+
 mod_match <- matchit(treat~ Install_firewall+BYOD+ Ignore_warnning+Strong_pin+
                        Store_passwords+update_OS+public_WiFi+unsecured_network+
                        network_control+network_attack+encrypted_transimittion+unreliable_int+
@@ -444,26 +450,14 @@ fn_bal <- function(dta, variable) {
 
 The t-test is used to compare the sample mean of our Treated group(IOS) and Control group(Android). The goal is to determine whether the intervention has an effective effect on the treated group. Our hypothesis is that the intervention will increase the perceived ES security. The t-test results will be presented in the next section. The package **Broom** [@broom1] is used to clean the t test results and convert it into the dataframe. 
 
-```{r ttest, fig.cap = "T-test",echo=FALSE, warning=FALSE,fig.width=8, fig.height=4}
-## T test
-ttest_after<-with(dta_m, t.test(PSave ~ treat))
-ttest_after
-tidy(ttest_after)%>%
-  select(-c(estimate,statistic,parameter))%>%
 
-  kableExtra::kbl(caption = "T-test on dependent variable") %>%  
-  kableExtra::kable_styling(latex_options = "scale_down")%>% # use scale_down option to make the font
-  kableExtra::kable_styling(latex_options = c("hold_position"))
-```
 
 ## Estimating treatment effects---regression model 
-We are using RStudio to run the multiple linear regression model. The following reasons explain why we decide to choose multiple linear regression [@WinNT]:
+We are using RStudio to run the multiple linear regression model. The following reasons explain why we decide to choose multiple linear regression to test the treatment effects [@WinNT]:
 
 * It account for all of the potentially important factors in one model
 * It leads to a more precise understanding of the relationship between dependent variables and independent variables
 * It is able to identify outliers or anomalies in the dataset. 
-
-
 
 **R squared** : 
 
@@ -483,8 +477,136 @@ The sign of the regression coefficient describes whether there is a positive or 
 
 # Results
 
+## Correlation matrix
+Correlation matrix shows internal relationships between users' attitude feature variables and our variable of interest, perceived ES security. (Figure \@ref(fig:correlation)) Intensity and direction of relationship is indicated by the color scale from red to blue (+1 to -1. descendant).  Insignificant coefficient is barred with symbol "x". From the correlation matrix below, it is evident that the dependent variable (PSave) has secure connections with the independent variables. 
 
-The p value we get is < 2.2e-16, as the p value would indicate a significant result, meaning that the actual p value is even smaller than 2.2e-16 (a typical threshold is 0.05, anything smaller counts as statistically significant). So we can interpret hypothesis not rejected which means that the re-opening of restaurants has a significant effect on treated group in terms of revenue increase.
+```{r correlation, fig.cap = "Correlation matrix",echo=FALSE, fig.width=11, fig.height=10}
+#install.packages("fastDummies")
+library(fastDummies)
+
+
+# correlation matrix for restaurants in treated group
+CM_data<-clean_data[-c(1:9,51)] 
+
+# Compute a correlation matrix
+corr <- round(cor(CM_data), 1) # round to 1 digit
+# Compute a matrix of correlation p-values
+#install.packages("ggcorrplot")
+
+library(ggcorrplot)
+p.mat <- cor_pmat(CM_data)
+# Visualize the lower triangle of the correlation matrix
+# Barring the no significant coefficient
+ggcorrplot(
+  corr, hc.order = TRUE, type = "lower",
+  p.mat=p.mat,
+  title = "Correlation Matrix"
+  )
+```
+
+## Two-sample T-test results
+
+### Average perceived ES security score
+
+Table \@ref(tab:summary) shows some basic statistic analysis about iPhone group and Android group. The average perceived ES security for iPhone group is 5.082209. The average perceived ES security for Android group is 5.427381.
+
+The standard error is considered part of inferential statistics. It represents the standard deviation of the mean within a dataset. This serves as a measure of variation for random variables, providing a measurement for the spread. The smaller the spread, the more accurate the dataset. The standard error is 0.1227353 for control group and 0.1076873 for treat group. 
+
+```{r summary, fig.cap = "T-test",echo=FALSE, warning=FALSE,fig.width=8, fig.height=4 }
+
+
+#### 1.1 Difference-in-means: dependent variable
+clean_data%>%
+  group_by(treat) %>%
+  dplyr::summarise(n_users=n(),.groups = 'drop',
+            mean_perceived_security= mean(PSave),
+            std_error  = sd(PSave)/ sqrt(n_users))%>%
+  kableExtra::kbl(caption = "Difference-in-means: dependent variable") %>%
+  kableExtra::kable_styling(latex_options = c("hold_position"))
+
+
+
+```
+
+
+### T-test results
+
+After propensity score matching, Table \@ref(tab:ttest) shows the t-test result. The p value we get is 0.073385, as the p value would indicate a significant difference between two groups (a typical threshold is 0.05, anything smaller counts as statistically significant). The 95% confidence interval shows that the true difference is between -0.0280458 and 0.6170028.
+
+```{r ttest, fig.cap = "T-test",echo=FALSE, warning=FALSE,fig.width=8, fig.height=4}
+## T test
+ttest_after<-with(dta_m, t.test(PSave ~ treat))
+
+tidy(ttest_after)%>%
+  select(-c(estimate,statistic,parameter))%>%
+
+  kableExtra::kbl(caption = "T-test on dependent variable") %>%  
+  kableExtra::kable_styling(latex_options = "scale_down")%>% # use scale_down option to make the font
+  kableExtra::kable_styling(latex_options = c("hold_position"))
+```
+
+## Model Results
+
+Multiple linear regression was applied to predict the perceived ES security, using 30 independent variables and 1 1 dummy variable which indicate the intervention status.
+
+As shown in the summary table,Table \@ref(tab:model)^[The 'modelsummary' package @cite_modelsummary was helped to create the table.], there are 7 variables are significant (p<0.05) to the perceived ES security: update_OS; network_control; Data_regulation; weak_authentication; public_WiFi; Auto_update; malicious_attack.
+
+In this model result, the intercept (-0.086) represents the average effect for the reference group. There is only one reference group : **Treat: treat 0 (using Android devices)**
+
+
+The coefficient for **treatment effect** is 0.056, suggesting that the average perceived security from people who use iPhone is on average 0.056 unit higher than those who use Android, holding other variables constant. However the p value is 0.622991, which indicates this is not a significant result.
+
+The coefficient for **updata_OS** is 0.156, suggesting that one unit increase in updata_OS score is associated with 0.156 unit increase in the perceived ES security, holding other variables constant.The p value is 0.005613, which indicates this is a significant result.
+
+The coefficient for **public_wifi** is 0.133, suggesting that one unit increase in public_wifi score is associated with 0.133 unit increase in the perceived ES security, holding other variables constant.The p value is 0.011162, which indicates this is a significant result.
+
+The coefficient for **network_control** is 0.232, suggesting that one unit increase in network_control score is associated with 0.232 unit increase in the perceived ES security, holding other variables constant.The p value is 0.001147, which indicates this is a significant result.
+
+The coefficient for **Data_regulation** is 0.307, suggesting that one unit increase in data regulation score is associated with 0.307 unit increase in the perceived ES security, holding other variables constant.The p value is 0.000398, which indicates this is a significant result.
+
+The coefficient for **Auto_update** is 0.132, suggesting that one unit increase in Auto_update score is associated with 0.132 unit increase in the perceived ES security, holding other variables constant.The p value is 0.036760, which indicates this is a significant result.
+
+The coefficient for **malicious_attack** is -0.303, suggesting that one unit increase in malicious_attack score is associated with 0.303 unit decrease in the perceived ES security, holding other variables constant.The p value is 0.000902, which indicates this is a significant result. 
+
+The coefficient for **weak_authentication** is -0.155, suggesting that one unit increase in weak_authentication score is associated with 0.155 unit decrease in the perceived ES security, holding other variables constant.The p value is 0.021122, which indicates this is a significant result. 
+```{r model,fig.cap = "regression model result",echo=FALSE, warning=FALSE,fig.width=5, fig.height=8}
+## regression 
+
+
+propensity_score_regression <- lm(PSave~ Install_firewall+BYOD+ Ignore_warnning+Strong_pin+
+                                    Store_passwords+update_OS+public_WiFi+unsecured_network+
+                                    network_control+network_attack+encrypted_transimittion+unreliable_int+
+                                    cloud_resource +cloud_compute+remote_datastore+Data_regulation+multiple_login+
+                                    weak_authentication+unknown_app+  update_ES+ Auto_update+
+                                    VPN + third_party_app+update+single_authenticate+audit_log+access_right+ change_data+ malicious_attack +Data_threats+treat,
+                                  data = dta_m)
+
+
+library(modelsummary)
+ms<-
+modelsummary(
+propensity_score_regression,
+output = "default",
+fmt = 3,
+estimate = "estimate",
+statistic = "std.error",
+vcov = NULL,
+conf_level = 0.95, #confidence level to use for confidence intervals
+stars = TRUE,
+align = NULL,
+notes = NULL,
+title = "Regression results")
+ms%>%
+  kableExtra::kable_styling(bootstrap_options = "basic",
+                            latex_options = "HOLD_position",
+                            table.envir = "table",
+                            font_size =5
+                       )
+
+```
+
+The summary table above shows that the R-square value for the multiple linear regression model is 0.626, which means about 62.6% of the variation in the dependent variable(perceived ES security) can be explained by the multiple linear regression model. 
+
 
 # Discussion
 

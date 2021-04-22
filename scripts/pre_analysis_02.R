@@ -26,7 +26,7 @@ write_csv(clean_data, 'inputs/DATA/processed_dataset.csv')
 #### 1.1 Difference-in-means: dependent variable
 clean_data%>%
   group_by(treat) %>%
-  summarise(n_users=n(),
+  dplyr::summarise(n_users=n(),
             mean_perceived_security= mean(PSave),
             std_error  = sd(PSave)/ sqrt(n_users))%>%
   kableExtra::kbl(caption = "Difference-in-means: dependent variable") %>%
