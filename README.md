@@ -23,9 +23,10 @@ The description of the variables are as followed:
 * `system_nonrepudiation` : measures user's attitude towards "I believe that the mobile enterprise system is secured as the system does not deny any transaction that was carried out"
 * `PSave` : (Dependent variable) used in the model. It takes a mean of the previous five features and presents for the user's perceived ES security. 
 
+more on paper
 
 # File Structure
-* Scripts: the folder contains R codes to import and clean data.
+* Scripts: the folder contains R codes to import data, clean data and basic data analysis.
 * Input: The raw dataset and cleaned dataset are in the "data" subfolder.
-* Output: the "paper" subfolder contains pdf, R code and reference list of the paper. The "literature" subfolder contains the original paper written by Soubhik Barari, Christopher Lucas, and Kevin Munger and the literature used in our paper.
+* Output: the "paper" subfolder contains pdf, R code and reference list of the paper. 
 
