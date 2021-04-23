@@ -381,10 +381,10 @@ mod_match <- matchit(treat~ Install_firewall+BYOD+ Ignore_warnning+Strong_pin+
 
 ## check the match
 dta_m <- match.data(mod_match)
-dim(dta_m)
+
 
 head(dta_m)%>%
-  kableExtra::kbl(caption = "T test: Affect level of video vs control")%>%
+  kableExtra::kbl(caption = "Head of raw matching dataset")%>%
   kableExtra::kable_styling(latex_options = "scale_down")%>% # use scale_down option to make the font
   kableExtra::kable_styling(latex_options = c("hold_position"))
 ```
@@ -610,17 +610,59 @@ The summary table above shows that the R-square value for the multiple linear re
 
 # Discussion
 
+In a short conclusion, this research posts a question at the beginning: will iPhone user be more secure than Android user when using mobile enterprise system? To answer this question, the author did a literature review and category five main security issues when using mobile app. Based on that, the data was collected through the online questionnaire survey. The dataset was divided into two groups (IOS group and Android group), propensity score matching was applied to avoid selection bias. Though the treatment effect (iPhone as device) is not significant, we can not tell there is a strong evidence to support iPhone user is more secure than Android user when using mobile ES. The author still find something interesting about the dataset features. Through the multiple linear regression model, the author examined the impact of users’ attitude towards security issues on perceived security of ES mobility. The study findings will be used to evolve strategic considerations for designing and developing secured mobile ES. This will help the security providers of ES to know the determinants of perceived security in the users’ perspective and to take measures to improve the determinants.
+
+
 ## Causality 
 
-## First discussion point
+## Research findings
 
-## Second discussion point
+### Wireless network security issues have the most critical impact 
+According to the multiple linear regression model result, the regression coefficients for "public_WiFi", and "network_control" are very significant,
+indicating that users’ attitudes towards wireless network security issues have the most critical impact on the perceived system security. 
 
-## Third discussion point
+[@zissis2012addressing] explained that the perceived security of ES mobility refers to three fundamental properties: confidentiality, integrity, and availability. Each of the three dimensions would be attacked when mobile devices are connecting with the wireless network. Confidentiality attack happens when location-less hacker destroys or steals users’ information through the radio signals; integrity attack happens when a hacker compromises the wireless network to modify, exchange or retransmit enterprise data; and availability attack happens when service availability is disrupted [@leung2007security].
+
+
+Compared with the wired network, the wireless context is more vulnerable to be hacked because the transmission method of the radio signal is exposed to the air and could be intercepted anytime and anywhere. Besides, the wireless network is usually provided by a private service provider and operated on public shared infrastructure. The majority of small to medium enterprises do not have rights to control or manage the wireless network security setting, and they also lack of knowledge about security of the network infrastructure [@zissis2012addressing].
+After analyzing the implications of finding, the following best practices for addressing users’ attitudes towards wireless network security issues are listed:
+
+* Do not use public Wi-Fi to operate any mobile ERP system (such as Wi-Fi in coffee shops, airport kiosks or other hotspots).
+* Pay attention to wireless network security warnings that pop up on mobile devices
+* Keep your web browser, wireless firewall, and anti-virus software up to date.
+
+### Business need a strategic level security plan toward ES mobility
+
+Through the demographics of ownership of the device, it is notable to find that 93 percent of mobile devices are owned by users. “Bring your own device” (BYOD) issues increase the risk of data breaches because the portable devices are easy to get lost or stolen [@he2013survey]. Besides, when employees leave the organization, they are no longer under the protection of the company’s network’s firewall. However, the company’s confidential data is still stored in that device. Accordingly, BYOD will increase the possibility of data leaking, and it is more vulnerable for malicious threats. Companies can cause security crises if their employees lack an understanding of the different changes in the enterprise security environment. Many mobile users overly trust the security of their device and often ignore security alerts. For example, many users do not care about the permission warnings before installing the applications[@he2013survey]. Based on that, the author put  forwards the following advice:
+
+* It is vital for any business to have a strategic level security plan toward ES mobility.
+* Pay attention to permission warnings (or terms and conditions of usage) when installing the applications
+* The mobile ES user should involve themselves in developing an enterprise-level security plan and understand how it works.
+
+## Android user's average perceived ES security is higher! 
+
+
 
 ## Weaknesses and next steps
 
-The true propensity score is never known in observational studies, so you can never be certain that the propensity score estimates are accurate. Some authors urge caution in knowing the limitations of what really amounts to an estimation tool — and trying to approximate a random experiment from observational data can be fraught with pitfalls. Others, (e.g. King,2016) think that these scores shouldn’t be used for matching at all.
+### potential limitations 
+
+First, there are a considerable number of mobile ERP users distributed all over the world. However, the questionnaire survey in this study was only carried out in China. In addition, the sample overrepresents the female perspective (57%) and the perceptive of the iPhone mobile user (53%). The sample is not entirely representative of the wide range of mobile ES users. These limitations could bias the results of the data analysis. 
+
+Second, the number of respondents for the questionnaire survey is not large enough, which might lower the universality of the research results. 
+
+Third, this study uses the online questionnaire as its method to collect data, and the accuracy and quality of the data cannot be guaranteed because of participants’ perfunctory responses.
+
+Fourth, The true propensity score is never known in observational studies, so you can never be certain that the propensity score estimates are accurate [@abadie2016matching]. Some authors urge caution in knowing the limitations of what really amounts to an estimation tool, they mentioned that "trying to approximate a random experiment from observational data can be fraught with pitfalls" [@caliendo2008some]. 
+
+
+### Future research direction 
+
+This research aims to find how different iPhone users act compared with Android users, and how those actions or awareness impact the perceived ES security. Unfortunately, the treatment effect is not obvious. 
+
+This study also focuses on users’ attitudes on the perceived security of enterprise systems mobility. In order to enhance the security of mobile ERP software, IT developers are also essential for system maintenance. Future research could study how to increase system security and reduce risks from the perspective of IT staff. 
+
+The data collection can be done in the perspective of IT staff and top management. In addition, to avoid limitations on the sample, the future researchers can consider carrying out investigations with respondents from a broader scope and more diverse backgrounds, which can help enhance the universality and quality of the data collection.
 
 \newpage
 

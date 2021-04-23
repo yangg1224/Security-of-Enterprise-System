@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.14)  22 APR 2021 12:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.14)  23 APR 2021 11:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -607,26 +607,26 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3] [4] [5] [6]
-<paper_files/figure-latex/treat-1.pdf, id=205, 691.58376pt x 290.08376pt>
+<paper_files/figure-latex/treat-1.pdf, id=200, 691.58376pt x 290.08376pt>
 File: paper_files/figure-latex/treat-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/treat-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/treat-1.pdf  used on input li
 ne 325.
 (pdftex.def)             Requested size: 469.7642pt x 197.04187pt.
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.333 
-       <./paper_files/figure-latex/treat-1.pdf>]
-<paper_files/figure-latex/workexperience-1.pdf, id=226, 706.64pt x 280.04625pt>
+<paper_files/figure-latex/workexperience-1.pdf, id=202, 706.64pt x 280.04625pt>
 
 File: paper_files/figure-latex/workexperience-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/workexperience-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/workexperience-1.pdf  used on
  input line 336.
 (pdftex.def)             Requested size: 469.75874pt x 186.16858pt.
-<paper_files/figure-latex/education-1.pdf, id=228, 421.575pt x 204.765pt>
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.338 \end{figure}
+                   <./paper_files/figure-latex/treat-1.pdf>]
+<paper_files/figure-latex/education-1.pdf, id=223, 421.575pt x 204.765pt>
 File: paper_files/figure-latex/education-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/education-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/education-1.pdf  used on inpu
@@ -644,7 +644,7 @@ l.355
 l.355 
        <./paper_files/figure-latex/workexperience-1.pdf> <./paper_files/figure-
 latex/education-1.pdf>]
-<paper_files/figure-latex/own-1.pdf, id=256, 453.695pt x 266.9975pt>
+<paper_files/figure-latex/own-1.pdf, id=251, 453.695pt x 266.9975pt>
 File: paper_files/figure-latex/own-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/own-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/own-1.pdf  used on input line
@@ -665,13 +665,13 @@ has been already used, duplicate ignored
                                                   
 l.488 
       ]
-<paper_files/figure-latex/cs1-1.pdf, id=293, 464.73625pt x 280.04625pt>
+<paper_files/figure-latex/cs1-1.pdf, id=287, 464.73625pt x 280.04625pt>
 File: paper_files/figure-latex/cs1-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/cs1-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/cs1-1.pdf  used on input line
  491.
 (pdftex.def)             Requested size: 464.74928pt x 280.0541pt.
-<paper_files/figure-latex/cs2-1.pdf, id=295, 453.695pt x 279.0425pt>
+<paper_files/figure-latex/cs2-1.pdf, id=289, 453.695pt x 279.0425pt>
 File: paper_files/figure-latex/cs2-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/cs2-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/cs2-1.pdf  used on input line
@@ -688,34 +688,34 @@ l.502
                                                   
 l.502 
        <./paper_files/figure-latex/cs1-1.pdf>]
-<paper_files/figure-latex/balance-1.pdf, id=310, 573.14125pt x 714.67pt>
+<paper_files/figure-latex/balance-1.pdf, id=305, 573.14125pt x 714.67pt>
 File: paper_files/figure-latex/balance-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/balance-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/balance-1.pdf  used on input 
-line 545.
+line 541.
 (pdftex.def)             Requested size: 469.76022pt x 585.76056pt.
 [13pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.548 
+l.544 
       pdfTeX warning (ext4): destination with the same identifier (name{table.3
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.548 
+l.544 
        <./paper_files/figure-latex/cs2-1.pdf>] [14pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.7}) has been already used, duplicat
 e ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.553 
+l.549 
        <./paper_files/figure-latex/balance-1.pdf>]
-<paper_files/figure-latex/correlation-1.pdf, id=347, 778.91pt x 709.65125pt>
+<paper_files/figure-latex/correlation-1.pdf, id=342, 778.91pt x 709.65125pt>
 File: paper_files/figure-latex/correlation-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/correlation-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/correlation-1.pdf  used on in
-put line 591.
+put line 587.
 (pdftex.def)             Requested size: 469.75043pt x 427.98137pt.
 [15]
 
@@ -725,20 +725,20 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.624 
+l.620 
        <./paper_files/figure-latex/correlation-1.pdf>] [17pdfTeX warning (ext4)
 : destination with the same identifier (name{table.4}) has been already used, d
 uplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.661 
+l.657 
       pdfTeX warning (ext4): destination with the same identifier (name{table.5
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.661 
+l.657 
       ]
-Overfull \hbox (2.58295pt too wide) in paragraph at lines 662--663
+Overfull \hbox (2.58295pt too wide) in paragraph at lines 658--659
 []\T1/lmr/m/n/10 The co-ef-fi-cient for \T1/lmr/bx/n/10 weak_authentication \T1
 /lmr/m/n/10 is -0.155, sug-gest-ing that one unit in-crease in weak_authenticat
 ion
@@ -748,19 +748,19 @@ ion
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.752 
-      ] [19] [20] [21] [22] (./paper.aux)
+l.748 
+      ] [19] [20] [21] [22] [23] (./paper.aux)
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 98918F2935BE24931ACAAAD785D94065;4592.
+(rerunfilecheck)             Checksum: F548EC7F71A8D278A94F34414C189062;4565.
  ) 
 Here is how much of TeX's memory you used:
- 12144 strings out of 480970
- 176638 string characters out of 5907196
- 624326 words of memory out of 5000000
- 28948 multiletter control sequences out of 15000+600000
+ 12157 strings out of 480970
+ 177128 string characters out of 5907196
+ 624551 words of memory out of 5000000
+ 28950 multiletter control sequences out of 15000+600000
  476490 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,13n,74p,1027b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,13n,74p,1205b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/yang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/
 yang/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/yang/L
 ibrary/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/yang/Library/Ti
@@ -777,10 +777,10 @@ brary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/yang/Library/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/yang/Library/TinyTeX/te
 xmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/yang/Library/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (22 pages, 1025678 bytes).
+Output written on paper.pdf (23 pages, 1031830 bytes).
 PDF statistics:
- 544 PDF objects out of 1000 (max. 8388607)
- 476 compressed objects within 5 object streams
- 144 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 557 PDF objects out of 1000 (max. 8388607)
+ 488 compressed objects within 5 object streams
+ 155 named destinations out of 1000 (max. 500000)
+ 257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
