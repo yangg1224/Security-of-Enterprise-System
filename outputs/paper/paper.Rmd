@@ -96,9 +96,9 @@ Overall, the dataset has 331 observations and contains 50 features. The first ni
 * `Mobile_device` : asks for user's mobile phone brand 
 * `Device_ownership` : clarify if the mobile phone is owned by company or owned by the user 
 
-### perceived ES security features [reference!!!]
+### perceived ES security features 
 
-The perceived ES security is this paper's dependent variable. According to Levent et al. (2005), enterprise security plan serves as an essential role to coordinate information security policies and applicable security technologies, making them align with the business rules and the developing information models and technical architectures. Consoli (2012) combined acknowledged definitions of context and security, and concluded the security context should point to five goals:Integrity to ensure that data is in the original format and not modified; Confidentiality to ensure that only authorized people have access to resources; Authentication for allowing the access to the resources; Availability to maintain the proper functioning of the information system; Non-repudiation to ensure that a transaction cannot be denied.
+The perceived ES security is this paper's dependent variable. According to [@ertaul2005enterprise], enterprise security plan serves as an essential role to coordinate information security policies and applicable security technologies, making them align with the business rules and the developing information models and technical architectures. [@consoli2012corporate] combined acknowledged definitions of context and security, and concluded the security context should point to five goals:Integrity to ensure that data is in the original format and not modified; Confidentiality to ensure that only authorized people have access to resources; Authentication for allowing the access to the resources; Availability to maintain the proper functioning of the information system; Non-repudiation to ensure that a transaction cannot be denied.
 
 According to the definition above, the dataset has five features to measure the perceived ES security. Starting from here, the questionnaire is designed using interval scale (0-strongly disagree to 10-strongly agree). The user is asked to give a number between 0 and 10, which represent for their attitudes towards the given situation. 
 
@@ -109,9 +109,9 @@ According to the definition above, the dataset has five features to measure the 
 * `system_nonrepudiation` : measures user's attitude towards "I believe that the mobile enterprise system is secured as the system does not deny any transaction that was carried out"
 * `PSave` : (Dependent variable) used in the model. It takes a mean of the previous five features and presents for the user's perceived ES security. 
 
-### Molibe device security issue features [references!!!]
+### Molibe device security issue features 
 
-A mobile device refers to any portable device which has computing and storage capabilities(Singh & Ranjan, 2016). The range of devices from smartphones, iPads, and tablets is quite popular among clients and IT professionals. Mobile users can work everywhere without being constrained by any networking system. These mobility and roaming features extend the network boundary beyond a single fixed point but make security management a much harder issue, because users cannot be tracked down into a fixed location anymore (Al Ladan, 2016). Moreover, mobile devices’ operational systems are highly vulnerable, which results in threats having a variety of ways to spread. There is no device whose platform is completely closed, which has weakened the security performance of the original application and creates more risks for information sharing (Hermann & Fabian, 2014).  There are six independent variables which might affect the perceived ES security:
+A mobile device refers to any portable device which has computing and storage capabilities [@singh2016framework]. The range of devices from smartphones, iPads, and tablets is quite popular among clients and IT professionals. Mobile users can work everywhere without being constrained by any networking system. These mobility and roaming features extend the network boundary beyond a single fixed point but make security management a much harder issue, because users cannot be tracked down into a fixed location anymore [@singh2016framework]. Moreover, mobile devices’ operational systems are highly vulnerable, which results in threats having a variety of ways to spread. There is no device whose platform is completely closed, which has weakened the security performance of the original application and creates more risks for information sharing[@hermann2014comparison].  There are six independent variables which might affect the perceived ES security:
 
 * `Install_firewall` : measures user's attitude towards " I feel painful to install or update the security software such as antivirus and firewall software on my device."
 * `BYOD` : measures user's attitude towards " I like the idea of using my own device for personal and corporate business."
@@ -120,9 +120,9 @@ A mobile device refers to any portable device which has computing and storage ca
 * `Store_passwords` : measures user's attitude towards " I feel it is simple and easy to store usernames and passwords on the device."
 * `update_OS` :measures user's attitude towards " I feel painful to update the operating systems (e.g. iOS, Android) in my mobile device. "
 
-### Wireless network security issue features [reference!!!]
+### Wireless network security issue features 
 
-Mobile communication is generated mainly through radio signals rather than wires, so mobile ES has particular challenges compared with traditional computer-based ES. First of all, reliable Internet availability is a pre-requirement for the secure wireless network. According to Hermann and Fabian (2014), “the wireless network is more accessible to intercept and attack, so traditional security technologies such as firewalls, authentication servers, biometrics, cryptography, intrusion detection, and VPNs are not enough to address security issues in the wireless network”(Hermann & Fabian, 2014). There are six independent variables related to the wireless network which might affect the perceived ES security:
+Mobile communication is generated mainly through radio signals rather than wires, so mobile ES has particular challenges compared with traditional computer-based ES. First of all, reliable Internet availability is a pre-requirement for the secure wireless network. According to [@hermann2014comparison], “the wireless network is more accessible to intercept and attack, so traditional security technologies such as firewalls, authentication servers, biometrics, cryptography, intrusion detection, and VPNs are not enough to address security issues in the wireless network”[@hermann2014comparison]. There are six independent variables related to the wireless network which might affect the perceived ES security:
 
 * `public_WiFi` : measures user's attitude towards "  I believe it is secured to use the wireless networks in public places such as coffee shops, airport kiosks, or other hotspots"
 * `unsecured_network` : measures user's attitude towards " I show no interest on the security threats on the wireless networks."
@@ -133,7 +133,7 @@ Mobile communication is generated mainly through radio signals rather than wires
 
 ### Cloud Computing Security Issue features
 
-The appearance of cloud computing is narrowing down the gap between mobile ES and small to medium companies. Although it does cut down the set-up process time and cost and reduces the required skills in the company, some challenges and problems should still be kept in mind. Certain loopholes in its architecture have made cloud computing vulnerable to various security and privacy threats (Picek, Mijac, & Androcec, 2017).There are six independent variables related to the cloud computing which might affect the perceived ES security:
+The appearance of cloud computing is narrowing down the gap between mobile ES and small to medium companies. Although it does cut down the set-up process time and cost and reduces the required skills in the company, some challenges and problems should still be kept in mind. Certain loopholes in its architecture have made cloud computing vulnerable to various security and privacy threats [@picek2017acceptance].There are six independent variables related to the cloud computing which might affect the perceived ES security:
 
 * `cloud_resource` : measures user's attitude towards "I believe that the applications that use cloud resources are vulnerable to threats."
 * `cloud_compute` : measures user's attitude towards "I believe the cloud computing is vulnerable for data security since the access can be
@@ -144,7 +144,7 @@ interrupted at multiple points in the cloud."
 * `weak_authentication` :measures user's attitude towards "In a cloud environment, I like to use simple and short passwords."
 
 ### Application level security issue features
-The application-level mobile solution mainly consists of mobile operation systems and mobile applications. The application layer provides users with an interface to operate their mobile devices. The operation system act as a platform to run mobile applications. Application-level issues usually take place in a multi-tenant environment or in a virtualized world. There are six independent variables related to the application which might affect the perceived ES security:
+The application-level mobile solution mainly consists of mobile operation systems and mobile applications. The application layer provides users with an interface to operate their mobile devices. The operation system act as a platform to run mobile applications. Application-level issues usually take place in a multi-tenant environment or in a virtualized world[@hermann2014comparison]. There are six independent variables related to the application which might affect the perceived ES security:
 
 * `unknown_app` : measures user's attitude towards "I feel pleasant to download applications from unreliable web sites or from links within e-mails"
 * `update_ES` : measures user's attitude towards "I believe in installing updates for ERP systems to avoid any outdated security protections."
@@ -155,7 +155,7 @@ application sites."
 * `update` :measures user's attitude towards "I like to update the device operating systems and applications when prompted."
 
 ### Data Level Security Issue features
-Since there is currently no appropriate regulation around data protection, data-level security is relying heavily on trust between the business and the provider. Data location and replication is one of the biggest concerns in the data level. A replica might be located in different countries where there is no clear legislation about data security and privacy, increasing the difficulty of managing the data (Kouatli, 2014). There are six independent variables related to the data access which might affect the perceived ES security:
+Since there is currently no appropriate regulation around data protection, data-level security is relying heavily on trust between the business and the provider. Data location and replication is one of the biggest concerns in the data level. A replica might be located in different countries where there is no clear legislation about data security and privacy, increasing the difficulty of managing the data [@kouatli2014comparative]. There are six independent variables related to the data access which might affect the perceived ES security:
 
 * ` single_authenticate` : measures user's attitude towards "I like single authentication process for data access using only passwords."
 * `audit_log` : measures user's attitude towards "I dislike maintaining audit logs to track any changes in the data.."
@@ -549,12 +549,43 @@ tidy(ttest_after)%>%
 
 Multiple linear regression was applied to predict the perceived ES security, using 30 independent variables and 1 1 dummy variable which indicate the intervention status.
 
+### Treatment effect result
+Table \@ref(tab:model1) shows the treatment effect. In this model result, the intercept (5.377) represents the average effect for the reference group. There is only one reference group : **Treat: treat 0 (using Android devices)**The coefficient for **treatment effect** is -0.294, suggesting that the average perceived security from people who use iPhone is on average 0.294 unit lower than those who use Android, holding other variables constant. The p value is 0.0734, which indicates this is a significant result.
+
+```{r model1,fig.cap = "regression model result",echo=FALSE, warning=FALSE,fig.width=5, fig.height=8}
+## regression 
+
+
+propensity_score_regression1 <- lm(PSave~ treat,
+                                  data = dta_m)
+library(modelsummary)
+ms<-
+modelsummary(
+propensity_score_regression1,
+output = "default",
+fmt = 3,
+estimate = "estimate",
+statistic = "std.error",
+vcov = NULL,
+conf_level = 0.95, #confidence level to use for confidence intervals
+stars = TRUE,
+align = NULL,
+notes = NULL,
+title = "Treatment effect")
+ms%>%
+  kableExtra::kable_styling(bootstrap_options = "basic",
+                            latex_options = "HOLD_position",
+                            table.envir = "table",
+                            font_size =5
+                       )
+
+```
+
+
+### regression model results
+
 As shown in the summary table,Table \@ref(tab:model)^[The 'modelsummary' package @cite_modelsummary was helped to create the table.], there are 7 variables are significant (p<0.05) to the perceived ES security: update_OS; network_control; Data_regulation; weak_authentication; public_WiFi; Auto_update; malicious_attack.
 
-In this model result, the intercept (-0.086) represents the average effect for the reference group. There is only one reference group : **Treat: treat 0 (using Android devices)**
-
-
-The coefficient for **treatment effect** is 0.056, suggesting that the average perceived security from people who use iPhone is on average 0.056 unit higher than those who use Android, holding other variables constant. However the p value is 0.622991, which indicates this is not a significant result.
 
 The coefficient for **updata_OS** is 0.156, suggesting that one unit increase in updata_OS score is associated with 0.156 unit increase in the perceived ES security, holding other variables constant.The p value is 0.005613, which indicates this is a significant result.
 
@@ -569,6 +600,12 @@ The coefficient for **Auto_update** is 0.132, suggesting that one unit increase 
 The coefficient for **malicious_attack** is -0.303, suggesting that one unit increase in malicious_attack score is associated with 0.303 unit decrease in the perceived ES security, holding other variables constant.The p value is 0.000902, which indicates this is a significant result. 
 
 The coefficient for **weak_authentication** is -0.155, suggesting that one unit increase in weak_authentication score is associated with 0.155 unit decrease in the perceived ES security, holding other variables constant.The p value is 0.021122, which indicates this is a significant result. 
+
+
+
+
+
+
 ```{r model,fig.cap = "regression model result",echo=FALSE, warning=FALSE,fig.width=5, fig.height=8}
 ## regression 
 
@@ -578,8 +615,12 @@ propensity_score_regression <- lm(PSave~ Install_firewall+BYOD+ Ignore_warnning+
                                     network_control+network_attack+encrypted_transimittion+unreliable_int+
                                     cloud_resource +cloud_compute+remote_datastore+Data_regulation+multiple_login+
                                     weak_authentication+unknown_app+  update_ES+ Auto_update+
-                                    VPN + third_party_app+update+single_authenticate+audit_log+access_right+ change_data+ malicious_attack +Data_threats+treat,
+                                    VPN + third_party_app+update+single_authenticate+audit_log+access_right+ change_data+ malicious_attack +Data_threats,
                                   data = dta_m)
+
+propensity_score_regression1 <- lm(PSave~ treat,
+                                  data = dta_m)
+
 
 
 library(modelsummary)
@@ -595,7 +636,7 @@ conf_level = 0.95, #confidence level to use for confidence intervals
 stars = TRUE,
 align = NULL,
 notes = NULL,
-title = "Regression results")
+title = "Regression results summary table")
 ms%>%
   kableExtra::kable_styling(bootstrap_options = "basic",
                             latex_options = "HOLD_position",
@@ -615,7 +656,14 @@ In a short conclusion, this research posts a question at the beginning: will iPh
 
 ## Causality 
 
+Through the multiple linear regression, the treatment effect (treat1) is -0.294, which means using iPhone as device to operate enterprise system would be less secured than using Android. The p value is 0.07, which provide a strong evidence to support the regression result. Our guess that iPhone user would be more secured is rejected. In other word, using Android device would increase the perceived ES security. Android users have better awareness to defend different security issues. 
+
 ## Research findings
+ 
+### Android user's average perceived ES security is higher! 
+
+From the result of the two sample T test, we are amazed to find the score for Android user's average perceived ES security is around 6%  higher than iPhone user's score. The sample distribution shows employees who have more than 3 years working experience more inclined to use Android phones. While for those employees with less than 1 year working experience, they are the majority iPhone users. Android users has better awareness towards the security issues might have the following reasons:  Apple think what is the best for you, and no matter what you need or not. So iPhone locks down the UI and system setting, which greatly limit the customization. In contrast, users can make their Android phone unique! With deep knowledge, users can make their Android phone more secured.   
+
 
 ### Wireless network security issues have the most critical impact 
 According to the multiple linear regression model result, the regression coefficients for "public_WiFi", and "network_control" are very significant,
@@ -627,7 +675,7 @@ indicating that users’ attitudes towards wireless network security issues have
 Compared with the wired network, the wireless context is more vulnerable to be hacked because the transmission method of the radio signal is exposed to the air and could be intercepted anytime and anywhere. Besides, the wireless network is usually provided by a private service provider and operated on public shared infrastructure. The majority of small to medium enterprises do not have rights to control or manage the wireless network security setting, and they also lack of knowledge about security of the network infrastructure [@zissis2012addressing].
 After analyzing the implications of finding, the following best practices for addressing users’ attitudes towards wireless network security issues are listed:
 
-* Do not use public Wi-Fi to operate any mobile ERP system (such as Wi-Fi in coffee shops, airport kiosks or other hotspots).
+* Do not use public Wi-Fi to operate any mobile Enterprise system (such as Wi-Fi in coffee shops, airport kiosks or other hotspots).
 * Pay attention to wireless network security warnings that pop up on mobile devices
 * Keep your web browser, wireless firewall, and anti-virus software up to date.
 
@@ -638,9 +686,6 @@ Through the demographics of ownership of the device, it is notable to find that 
 * It is vital for any business to have a strategic level security plan toward ES mobility.
 * Pay attention to permission warnings (or terms and conditions of usage) when installing the applications
 * The mobile ES user should involve themselves in developing an enterprise-level security plan and understand how it works.
-
-## Android user's average perceived ES security is higher! 
-
 
 
 ## Weaknesses and next steps
@@ -668,12 +713,23 @@ The data collection can be done in the perspective of IT staff and top managemen
 
 \appendix
 
-# Appendix {-}
+## Appendix A 
+The data collection was done in China, so the language is Chinese. Here is the link: https://www.wjx.cn/jq/43537868.aspx 
 
+```{r page1, echo=FALSE, fig.cap="Screen capture of the first part of the Survey.", out.width = '70%', fig.align="center"} 
+library(here)
+knitr::include_graphics(here::here("outputs/image/questionnaire1.png"))
+```
 
-# Additional details
-
-
+## Appendix B 
+The first 20 rows of raw data which will be used in regression is shown in the Table below. (Table \@ref(tab:rowdata))
+#plot row data set in table
+```{r rowdata, echo=FALSE}
+  head(clean_data,20)%>%
+  kableExtra::kbl(caption = "First 100 rows Raw data ") %>%
+  kableExtra::kable_styling(latex_options = "scale_down")%>% # use scale_down option to make the font
+  kable_styling()
+```
 \newpage
 
 

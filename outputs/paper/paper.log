@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.14)  23 APR 2021 11:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.24)  24 APR 2021 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,7 +23,7 @@ File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 ) (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
-Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
@@ -130,7 +130,7 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 2.
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )) (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks21
@@ -458,7 +458,7 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 )
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.de
 f
-File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
 \l__pdf_internal_box=\box68
 ) (./paper.aux)
@@ -548,22 +548,22 @@ LaTeX Info: Redefining \nameref on input line 100.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 02.
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
 02.
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
 102.
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
 102.
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <17.28> on input line 102.
@@ -584,7 +584,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 02.
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 102.
@@ -605,15 +605,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 29.
 (/Users/yang/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [3] [4] [5] [6]
-<paper_files/figure-latex/treat-1.pdf, id=200, 691.58376pt x 290.08376pt>
+<paper_files/figure-latex/treat-1.pdf, id=195, 691.58376pt x 290.08376pt>
 File: paper_files/figure-latex/treat-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/treat-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/treat-1.pdf  used on input li
 ne 325.
 (pdftex.def)             Requested size: 469.7642pt x 197.04187pt.
-<paper_files/figure-latex/workexperience-1.pdf, id=202, 706.64pt x 280.04625pt>
+<paper_files/figure-latex/workexperience-1.pdf, id=197, 706.64pt x 280.04625pt>
 
 File: paper_files/figure-latex/workexperience-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/workexperience-1.pdf>
@@ -626,7 +626,7 @@ has been already used, duplicate ignored
                                                   
 l.338 \end{figure}
                    <./paper_files/figure-latex/treat-1.pdf>]
-<paper_files/figure-latex/education-1.pdf, id=223, 421.575pt x 204.765pt>
+<paper_files/figure-latex/education-1.pdf, id=218, 421.575pt x 204.765pt>
 File: paper_files/figure-latex/education-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/education-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/education-1.pdf  used on inpu
@@ -644,7 +644,7 @@ l.355
 l.355 
        <./paper_files/figure-latex/workexperience-1.pdf> <./paper_files/figure-
 latex/education-1.pdf>]
-<paper_files/figure-latex/own-1.pdf, id=251, 453.695pt x 266.9975pt>
+<paper_files/figure-latex/own-1.pdf, id=246, 453.695pt x 266.9975pt>
 File: paper_files/figure-latex/own-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/own-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/own-1.pdf  used on input line
@@ -665,13 +665,13 @@ has been already used, duplicate ignored
                                                   
 l.488 
       ]
-<paper_files/figure-latex/cs1-1.pdf, id=287, 464.73625pt x 280.04625pt>
+<paper_files/figure-latex/cs1-1.pdf, id=282, 464.73625pt x 280.04625pt>
 File: paper_files/figure-latex/cs1-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/cs1-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/cs1-1.pdf  used on input line
  491.
 (pdftex.def)             Requested size: 464.74928pt x 280.0541pt.
-<paper_files/figure-latex/cs2-1.pdf, id=289, 453.695pt x 279.0425pt>
+<paper_files/figure-latex/cs2-1.pdf, id=284, 453.695pt x 279.0425pt>
 File: paper_files/figure-latex/cs2-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/cs2-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/cs2-1.pdf  used on input line
@@ -688,7 +688,7 @@ l.502
                                                   
 l.502 
        <./paper_files/figure-latex/cs1-1.pdf>]
-<paper_files/figure-latex/balance-1.pdf, id=305, 573.14125pt x 714.67pt>
+<paper_files/figure-latex/balance-1.pdf, id=300, 573.14125pt x 714.67pt>
 File: paper_files/figure-latex/balance-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/balance-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/balance-1.pdf  used on input 
@@ -711,7 +711,7 @@ e ignored
                                                   
 l.549 
        <./paper_files/figure-latex/balance-1.pdf>]
-<paper_files/figure-latex/correlation-1.pdf, id=342, 778.91pt x 709.65125pt>
+<paper_files/figure-latex/correlation-1.pdf, id=337, 778.91pt x 709.65125pt>
 File: paper_files/figure-latex/correlation-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/correlation-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/correlation-1.pdf  used on in
@@ -731,33 +731,38 @@ l.620
 uplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.657 
+l.678 
       pdfTeX warning (ext4): destination with the same identifier (name{table.5
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.657 
+l.678 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.6
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.678 
       ]
-Overfull \hbox (2.58295pt too wide) in paragraph at lines 658--659
+Overfull \hbox (2.58295pt too wide) in paragraph at lines 689--690
 []\T1/lmr/m/n/10 The co-ef-fi-cient for \T1/lmr/bx/n/10 weak_authentication \T1
 /lmr/m/n/10 is -0.155, sug-gest-ing that one unit in-crease in weak_authenticat
 ion
  []
 
-[18pdfTeX warning (ext4): destination with the same identifier (name{table.6}) 
-has been already used, duplicate ignored
+[18] [19pdfTeX warning (ext4): destination with the same identifier (name{table
+.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.748 
-      ] [19] [20] [21] [22] [23] (./paper.aux)
+l.782 
+      ] [20] [21] [22] [23] [24] [25] (./paper.aux)
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: F548EC7F71A8D278A94F34414C189062;4565.
+(rerunfilecheck)             Checksum: 39300F5BD26ED885E935031DB738B78A;4211.
  ) 
 Here is how much of TeX's memory you used:
- 12157 strings out of 480970
- 177128 string characters out of 5907196
- 624551 words of memory out of 5000000
- 28950 multiletter control sequences out of 15000+600000
+ 12174 strings out of 480954
+ 177484 string characters out of 5906449
+ 614563 words of memory out of 5000000
+ 28963 multiletter control sequences out of 15000+600000
  476490 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,13n,74p,1205b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -777,10 +782,10 @@ brary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/yang/Library/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/yang/Library/TinyTeX/te
 xmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/yang/Library/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (23 pages, 1031830 bytes).
+Output written on paper.pdf (25 pages, 1034410 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 488 compressed objects within 5 object streams
- 155 named destinations out of 1000 (max. 500000)
- 257 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 505 compressed objects within 6 object streams
+ 168 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
