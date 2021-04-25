@@ -597,7 +597,7 @@ The coefficient for **Data_regulation** is 0.307, suggesting that one unit incre
 
 The coefficient for **Auto_update** is 0.132, suggesting that one unit increase in Auto_update score is associated with 0.132 unit increase in the perceived ES security, holding other variables constant.The p value is 0.036760, which indicates this is a significant result.
 
-The coefficient for **malicious_attack** is -0.303, suggesting that one unit increase in malicious_attack score is associated with 0.303 unit decrease in the perceived ES security, holding other variables constant.The p value is 0.000902, which indicates this is a significant result. 
+The coefficient for **malicious_attack** is 0. 219, suggesting that one unit increase in malicious_attack score is associated with 0.219 unit increase in the perceived ES security, holding other variables constant.The p value is 0.000902, which indicates this is a significant result. 
 
 The coefficient for **weak_authentication** is -0.155, suggesting that one unit increase in weak_authentication score is associated with 0.155 unit decrease in the perceived ES security, holding other variables constant.The p value is 0.021122, which indicates this is a significant result. 
 
@@ -711,15 +711,40 @@ The data collection can be done in the perspective of IT staff and top managemen
 
 \newpage
 
-\appendix
+#appendix
 
 ## Appendix A 
 The data collection was done in China, so the language is Chinese. Here is the link: https://www.wjx.cn/jq/43537868.aspx 
 
-```{r page1, echo=FALSE, fig.cap="Screen capture of the first part of the Survey.", out.width = '70%', fig.align="center"} 
+```{r page1, echo=FALSE, fig.cap="Screen capture of the survey invitation", out.width = '70%', fig.align="center"} 
 knitr::include_graphics(here::here("outputs/paper/image/image1.png"))
 ```
 
+```{r 1, echo=FALSE, fig.cap="Screen capture of the first part of the Survey.", out.width = '70%', fig.align="center"} 
+knitr::include_graphics(here::here("outputs/paper/image/1.png"))
+```
+
+
+
+```{r 2, echo=FALSE, fig.cap="Screen capture of the second part of the Survey.", out.width = '70%', fig.align="center"} 
+knitr::include_graphics(here::here("outputs/paper/image/2.png"))
+```
+
+```{r 3, echo=FALSE, fig.cap="Screen capture of the third part of the Survey.", out.width = '70%', fig.align="center"} 
+knitr::include_graphics(here::here("outputs/paper/image/3.png"))
+```
+
+```{r 4, echo=FALSE, fig.cap="Screen capture of the fourth part of the Survey.", out.width = '70%', fig.align="center"} 
+knitr::include_graphics(here::here("outputs/paper/image/4.png"))
+```
+
+```{r 5, echo=FALSE, fig.cap="Screen capture of the fifth part of the Survey.", out.width = '70%', fig.align="center"} 
+knitr::include_graphics(here::here("outputs/paper/image/5.png"))
+```
+
+```{r 6, echo=FALSE, fig.cap="Screen capture of the sixth part of the Survey.", out.width = '70%', fig.align="center"} 
+knitr::include_graphics(here::here("outputs/paper/image/6.png"))
+```
 ## Appendix B 
 The first 100 rows of raw data which will be used in regression is shown in the Table below. (Table \@ref(tab:rowdata))
 ```{r rowdata, echo=FALSE}

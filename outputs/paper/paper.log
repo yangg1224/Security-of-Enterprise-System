@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.24)  24 APR 2021 16:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.24)  25 APR 2021 07:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -764,26 +764,119 @@ e/image1.png>
 Package pdftex.def Info: /Users/yang/Downloads/Git/Security-of-Enterprise-Syste
 m/outputs/paper/image/image1.png  used on input line 866.
 (pdftex.def)             Requested size: 328.83455pt x 391.03346pt.
+</Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/image/1.
+png, id=423, 1287.81125pt x 707.64375pt>
+File: /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/ima
+ge/1.png Graphic file (type png)
+<use /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/imag
+e/1.png>
+Package pdftex.def Info: /Users/yang/Downloads/Git/Security-of-Enterprise-Syste
+m/outputs/paper/image/1.png  used on input line 875.
+(pdftex.def)             Requested size: 328.82967pt x 180.68971pt.
 [23pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.1090 \newpage
+l.881 
+       </Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/i
+mage/image1.png>]
+</Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/image/2.
+png, id=432, 1199.48125pt x 705.63625pt>
+File: /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/ima
+ge/2.png Graphic file (type png)
+<use /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/imag
+e/2.png>
+Package pdftex.def Info: /Users/yang/Downloads/Git/Security-of-Enterprise-Syste
+m/outputs/paper/image/2.png  used on input line 884.
+(pdftex.def)             Requested size: 328.82426pt x 193.44221pt.
+</Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/image/3.
+png, id=433, 1242.6425pt x 693.59125pt>
+File: /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/ima
+ge/3.png Graphic file (type png)
+<use /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/imag
+e/3.png>
+Package pdftex.def Info: /Users/yang/Downloads/Git/Security-of-Enterprise-Syste
+m/outputs/paper/image/3.png  used on input line 893.
+(pdftex.def)             Requested size: 328.82466pt x 183.53622pt.
+[24pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.899 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.899 
+       </Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/i
+mage/1.png> </Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/pa
+per/image/2.png>]
+</Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/image/4.
+png, id=442, 1230.5975pt x 690.58pt>
+File: /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/ima
+ge/4.png Graphic file (type png)
+<use /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/imag
+e/4.png>
+Package pdftex.def Info: /Users/yang/Downloads/Git/Security-of-Enterprise-Syste
+m/outputs/paper/image/4.png  used on input line 902.
+(pdftex.def)             Requested size: 328.81073pt x 184.5202pt.
+</Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/image/5.
+png, id=443, 1221.56375pt x 682.55pt>
+File: /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/ima
+ge/5.png Graphic file (type png)
+<use /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/imag
+e/5.png>
+Package pdftex.def Info: /Users/yang/Downloads/Git/Security-of-Enterprise-Syste
+m/outputs/paper/image/5.png  used on input line 911.
+(pdftex.def)             Requested size: 328.82008pt x 183.72856pt.
+[25pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.917 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.917 
+       </Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/i
+mage/3.png> </Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/pa
+per/image/4.png>]
+</Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/image/6.
+png, id=453, 1233.60875pt x 657.45625pt>
+File: /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/ima
+ge/6.png Graphic file (type png)
+<use /Users/yang/Downloads/Git/Security-of-Enterprise-System/outputs/paper/imag
+e/6.png>
+Package pdftex.def Info: /Users/yang/Downloads/Git/Security-of-Enterprise-Syste
+m/outputs/paper/image/6.png  used on input line 920.
+(pdftex.def)             Requested size: 328.82474pt x 175.24834pt.
+[26pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.1143 \newpage
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{figure.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.1143 \newpage
                 </Users/yang/Downloads/Git/Security-of-Enterprise-System/output
-s/paper/image/image1.png>] [24pdfTeX warning (ext4): destination with the same 
+s/paper/image/5.png> </Users/yang/Downloads/Git/Security-of-Enterprise-System/o
+utputs/paper/image/6.png>] [27pdfTeX warning (ext4): destination with the same 
 identifier (name{table.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.1090 \newpage
-               ] [25] [26] (./paper.aux)
+l.1143 \newpage
+               ] [28] [29] (./paper.aux)
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 613F52AB71C07BA43C9306DC3E77792C;4218.
+(rerunfilecheck)             Checksum: D500D94F4C15C3AAA9C01F70B62C0BF4;4210.
  ) 
 Here is how much of TeX's memory you used:
- 12189 strings out of 480954
- 178257 string characters out of 5906449
- 1118419 words of memory out of 5000000
- 28972 multiletter control sequences out of 15000+600000
+ 12252 strings out of 480954
+ 181880 string characters out of 5906449
+ 1118932 words of memory out of 5000000
+ 29020 multiletter control sequences out of 15000+600000
  476490 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  71i,13n,74p,1205b,386s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -803,10 +896,10 @@ brary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/yang/Library/Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/yang/Library/TinyTeX/te
 xmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/yang/Library/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (26 pages, 1194261 bytes).
+Output written on paper.pdf (29 pages, 1793732 bytes).
 PDF statistics:
- 590 PDF objects out of 1000 (max. 8388607)
- 515 compressed objects within 6 object streams
- 171 named destinations out of 1000 (max. 500000)
- 254 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 621 PDF objects out of 1000 (max. 8388607)
+ 531 compressed objects within 6 object streams
+ 180 named destinations out of 1000 (max. 500000)
+ 284 words of extra memory for PDF output out of 10000 (max. 10000000)
 
