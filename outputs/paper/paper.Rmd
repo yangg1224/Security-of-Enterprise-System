@@ -717,15 +717,13 @@ The data collection can be done in the perspective of IT staff and top managemen
 The data collection was done in China, so the language is Chinese. Here is the link: https://www.wjx.cn/jq/43537868.aspx 
 
 ```{r page1, echo=FALSE, fig.cap="Screen capture of the first part of the Survey.", out.width = '70%', fig.align="center"} 
-library(here)
-knitr::include_graphics(here::here("outputs/image/questionnaire1.png"))
+knitr::include_graphics(here::here("outputs/paper/image/image1.png"))
 ```
 
 ## Appendix B 
-The first 20 rows of raw data which will be used in regression is shown in the Table below. (Table \@ref(tab:rowdata))
-#plot row data set in table
+The first 100 rows of raw data which will be used in regression is shown in the Table below. (Table \@ref(tab:rowdata))
 ```{r rowdata, echo=FALSE}
-  head(clean_data,20)%>%
+  head(clean_data,100)%>%
   kableExtra::kbl(caption = "First 100 rows Raw data ") %>%
   kableExtra::kable_styling(latex_options = "scale_down")%>% # use scale_down option to make the font
   kable_styling()
